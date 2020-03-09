@@ -3,7 +3,6 @@ class CreateCarts < ActiveRecord::Migration[5.2]
     create_table :carts do |t|
 
     	t.references :customer, index: true
-    	t.references :JoinTableCartsItems, index: true
 
       t.timestamps
     end
