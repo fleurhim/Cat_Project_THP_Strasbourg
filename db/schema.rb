@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_09_093933) do
+ActiveRecord::Schema.define(version: 2020_03_09_132034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "carts", force: :cascade do |t|
+    t.bigint "customer_id"
+    t.bigint "JoinTableCartsItems_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["JoinTableCartsItems_id"], name: "index_carts_on_JoinTableCartsItems_id"
+    t.index ["customer_id"], name: "index_carts_on_customer_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.decimal "price"
+    t.string "image_url"
+    t.bigint "admin_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_items_on_admin_id"
+  end
+
+  create_table "join_table_cart_items", force: :cascade do |t|
+    t.bigint "cart_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_join_table_cart_items_on_cart_id"
+    t.index ["item_id"], name: "index_join_table_cart_items_on_item_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
