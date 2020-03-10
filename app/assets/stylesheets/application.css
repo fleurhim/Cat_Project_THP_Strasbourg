@@ -32,12 +32,6 @@
  *= require icon-hs/style
  *= require chosen/chosen
 
- * Revolution Slider
- *= require revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke
- *= require revolution-slider/revolution/css/settings-source
- *= require revolution-slider/revolution/css/layers
- *= require revolution-slider/revolution/css/navigation
-
  * CSS Unify
  *= require unify-core
  *= require unify
