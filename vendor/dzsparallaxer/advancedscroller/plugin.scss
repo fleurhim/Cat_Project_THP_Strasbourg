@@ -692,7 +692,7 @@ background: -webkit-linear-gradient(top, rgba(186,43,0,1) 0%,rgba(255,26,0,1) 10
 background: -o-linear-gradient(top, rgba(186,43,0,1) 0%,rgba(255,26,0,1) 100%);
 background: -ms-linear-gradient(top, rgba(186,43,0,1) 0%,rgba(255,26,0,1) 100%);
 background: linear-gradient(to bottom, rgba(186,43,0,1) 0%,rgba(255,26,0,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba2b00', endColorstr='#ff1a00',GradientType=0 );
+filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba2b00', endColorstr='#ff1a00',GradientType=0 )";
         font-family:  'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
 font-size: 9px;
 }
