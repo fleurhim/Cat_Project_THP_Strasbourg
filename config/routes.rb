@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/show'
+  root 'items#index'
   devise_for :users
   resources :items
-  root 'items#index'
   resources :users, only: [:show, :index] do
     resources :avatars, only: [:create]
   	resources :carts, only: [:show]
