@@ -23,6 +23,7 @@
 //= require bootstrap/offcanvas
 //= require jquery.easing/js/jquery.easing.min
 
+
 // ---- JS Implementing Plugins ----
 //= require hs-megamenu/src/hs.megamenu
 //= require dzsparallaxer/dzsparallaxer

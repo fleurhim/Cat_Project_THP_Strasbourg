@@ -68,3 +68,4 @@ gem 'devise'
 
 #Jquery
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'dotenv-rails'
