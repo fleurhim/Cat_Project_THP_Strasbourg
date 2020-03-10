@@ -46,6 +46,7 @@
 
  * CSS Customization
  *= require custom
+ *= require styles.e-commerce
  *= require_directory .
  *= require_self
  */
