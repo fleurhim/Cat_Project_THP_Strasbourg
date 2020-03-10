@@ -601,7 +601,7 @@ div.button-addtocart a {
   background: -o-linear-gradient(top, #ba2b00 0%, #ff1a00 100%);
   background: -ms-linear-gradient(top, #ba2b00 0%, #ff1a00 100%);
   background: linear-gradient(to bottom, #ba2b00 0%, #ff1a00 100%);
-  filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba2b00', endColorstr='#ff1a00',GradientType=0 )";
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba2b00', endColorstr='#ff1a00',GradientType=0 );
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
   font-size: 9px; }
 

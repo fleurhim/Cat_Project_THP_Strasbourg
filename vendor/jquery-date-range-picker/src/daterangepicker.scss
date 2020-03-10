@@ -304,7 +304,7 @@
       background: #0095cd;
       background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
       background: -moz-linear-gradient(top, #00adee, #0078a5);
-      filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5')";
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
       color: white;
       line-height: initial;
       &.disabled {
@@ -314,7 +314,7 @@
         background: #fff;
         background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
         background: -moz-linear-gradient(top, #fff, #ededed);
-        filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed')";
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
       }
     }
   }
