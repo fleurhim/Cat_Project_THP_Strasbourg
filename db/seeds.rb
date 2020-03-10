@@ -30,7 +30,7 @@ kitty_pictures = ["https://pixabay.com/fr/photos/kitty-cat-chaton-551554/","http
     user.save
 end 
 
-5.times do 
+9.times do 
     item = Item.new(title: Faker::Name.first_name, 
                     description: Faker::Lorem.paragraph,
                     price: Faker::Number.decimal(l_digits: 2),

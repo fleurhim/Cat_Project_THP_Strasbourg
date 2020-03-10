@@ -1,0 +1,218 @@
+<!-- Hero Info -->
+<section class="dzsparallaxer auto-init height-is-based-on-content use-loading" data-options='{direction: "reverse", settings_mode_oneelement_max_offset: "150"}'>
+  <!-- Parallax Image -->
+  <div class="divimage dzsparallaxer--target w-100 u-bg-overlay g-bg-black-opacity-0_2--after" style="height: 140%; background-image: url(https://images.unsplash.com/photo-1570018144715-43110363d70a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1860&q=80)"></div>
+  <!-- End Parallax Image -->
+
+  <div class="container text-center g-color-white g-py-150--md g-py-80">
+    <div class="row">
+      <div class="col-md-8 ml-md-auto mr-md-auto">
+        <h3 class="g-font-size-12 text-uppercase g-font-weight-600 g-mb-15"> <span class="g-color-primary">Our</span> Kitten</h3>
+          <a href="#all-items" class="btn btn-md u-btn-primary g-mr-10 g-mb-15">Shop Now</a>
+        <a href="#contact-info" class="btn btn-md u-btn-outline-primary g-mr-10 g-mb-15 u-btn-hover-v2-1 g-mr-10 g-mb-15">Contact Us</a>
+        <h2 class="h1 text-uppercase mb-3"></h2>
+        <div class="d-inline-block g-width-60 g-height-1 g-bg-white mb-3"></div>
+        <p class="lead g-mb-60"><br><br><br><br><br><br><br><br><br> </p>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- Hero Info -->
+
+<!-- Features -->
+<div class="g-brd-bottom g-brd-gray-light-v4">
+  <div class="container g-py-30">
+    <div class="row justify-content-center">
+      <div class="col-md-4 mx-auto g-py-15">
+        <div class="media g-px-50--lg">
+          <i class="d-flex g-color-black g-font-size-30 g-pos-rel g-top-3 mr-4 icon-real-estate-048 u-line-icon-pro"></i>
+          <div class="media-body">
+            <span class="d-block g-font-weight-500 g-font-size-default text-uppercase">Free Shipping</span>
+            <span class="d-block g-color-gray-dark-v4">In 2-3 Days</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mx-auto g-brd-x--md g-brd-gray-light-v3 g-py-15">
+        <div class="media g-px-50--lg">
+          <i class="d-flex g-color-black g-font-size-30 g-pos-rel g-top-3 mr-4 icon-real-estate-040 u-line-icon-pro"></i>
+          <div class="media-body">
+            <span class="d-block g-font-weight-500 g-font-size-default text-uppercase">Free Returns</span>
+            <span class="d-block g-color-gray-dark-v4">No Questions Asked</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mx-auto g-py-15">
+        <div class="media g-px-50--lg">
+          <i class="d-flex g-color-black g-font-size-30 g-pos-rel g-top-3 mr-4 icon-hotel-restaurant-062 u-line-icon-pro"></i>
+          <div class="media-body text-left">
+            <span class="d-block g-font-weight-500 g-font-size-default text-uppercase">Free 24</span>
+            <span class="d-block g-color-gray-dark-v4">Days Storage</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Features -->
+
+<!-- New Arrivals -->
+<section class="container g-py-100" id="all-items" >
+  <div class="text-center mx-auto g-max-width-600 g-mb-50">
+    <h2 class="g-color-black mb-4">New Arrivals</h2>
+    <p class="lead">We want to create a range of beautiful, practical and modern outerwear that doesn't cost the earth – but let's you still live life in style.</p>
+  </div>
+
+  <div class="row g-mx-minus-10 g-mb-50">
+  <% @items.each do |item|%>
+    <div class="col-md-6 col-lg-4 g-px-10">
+      <!-- Article -->
+      <article class="media g-brd-around g-brd-gray-light-v4 g-bg-white rounded g-pa-10 g-mb-20">
+        <!-- Article Image -->
+        <div class="g-max-width-100 g-mr-15">
+          <img class="d-flex w-100" src="https://images.unsplash.com/photo-1520315342629-6ea920342047?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjg2ODQyfQ&auto=format&fit=crop&w=1400&q=800" alt="Image Description">
+        </div>
+        <!-- End Article Image -->
+
+        <!-- Article Info -->
+        <div class="media-body align-self-center">
+          <h4 class="h5 g-mb-7">
+            <a class="g-color-black g-color-primary--hover g-text-underline--none--hover" href="#"><%= item.title %></a>
+          </h4>
+          <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10" href="#">Accessories</a>
+          <!-- End Article Info -->
+
+          <!-- Article Footer -->
+          <footer class="d-flex justify-content-between g-font-size-16">
+            <span class="g-color-black g-line-height-1"><%= item.price %>€</span>
+            <ul class="list-inline g-color-gray-light-v2 g-font-size-14 g-line-height-1">
+              <li class="list-inline-item align-middle g-brd-right g-pr-10 g-mr-6">
+                <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Cart"
+                   data-toggle="tooltip"
+                   data-placement="top">
+                  <i class="icon-finance-100 u-line-icon-pro"></i>
+                </a>
+              </li>
+            </ul>
+          </footer>
+          <!-- End Article Footer -->
+        </div>
+      </article>
+      <!-- End Article -->
+    </div>
+  <% end %>
+  </div>
+</section>
+<!-- End New Arrivals -->
+
+<!-- Promo Block -->
+<section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall " data-options='{direction: "fromtop", animation_duration: 25, direction: "reverse"}'>
+  <!-- Parallax Image -->
+  <div class="divimage dzsparallaxer--target w-100 g-bg-cover g-bg-size-cover g-bg-pos-top-center g-bg-black-opacity-0_3--after" style="height: 140%; background-image: url(https://images.unsplash.com/photo-1545529468-42764ef8c85f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2252&q=80);"></div>
+  <!-- End Parallax Image -->
+
+  <!-- Promo Block Content -->
+  <div class="container g-color-white text-center g-py-150">
+    <h2 class="h3 text-uppercase mb-2"></h2>
+    <p class="g-font-weight-600 g-font-size-40 text-uppercase"><br></p>
+  </div>
+  <!-- Promo Block Content -->
+</section>
+<!-- End Promo Block -->
+
+
+<div class="container g-py-100" id="contact-info">
+  <!-- Contact Info -->
+  <div class="row g-mb-100">
+    <div class="col-md-6 col-lg-4 mx-auto g-py-15">
+      <!-- Media -->
+      <div class="media g-brd-around g-brd-gray-light-v4 rounded g-pa-40">
+        <div class="d-flex g-mr-30">
+          <i class="d-inline-block g-color-primary g-font-size-40 g-pos-rel g-top-3 icon-communication-062 u-line-icon-pro"></i>
+        </div>
+        <div class="media-body">
+          <span class="d-block g-font-weight-500 g-font-size-default text-uppercase mb-2">Phone Numbers</span>
+          <ul class="list-unstyled mb-0">
+            <li class="d-block g-color-gray-dark-v4">+(01) 05-682-0355</li>
+          </ul>
+        </div>
+      </div>
+      <!-- End Media -->
+    </div>
+
+    <div class="col-md-6 col-lg-4 mx-auto g-py-15">
+      <!-- Media -->
+      <div class="media g-brd-around g-brd-gray-light-v4 rounded g-pa-40">
+        <div class="d-flex g-mr-30">
+          <i class="d-inline-block g-color-primary g-font-size-40 g-pos-rel g-top-3 icon-real-estate-027 u-line-icon-pro"></i>
+        </div>
+        <div class="media-body">
+          <span class="d-block g-font-weight-500 g-font-size-default text-uppercase mb-2">Location</span>
+          <span class="d-block g-color-gray-dark-v4">Royaume des chatons, KittyCiy, NL S0B2V9</span>
+        </div>
+      </div>
+      <!-- End Media -->
+    </div>
+
+      <!-- Media -->
+      <div class="col-md-6 col-lg-4 mx-auto g-py-15">
+        <div class="media g-brd-around g-brd-gray-light-v4 rounded g-pa-40">
+          <div class="d-flex g-mr-30">
+            <i class="d-inline-block g-color-primary g-font-size-40 g-pos-rel g-top-3 icon-hotel-restaurant-249 u-line-icon-pro"></i>
+          </div>
+          <div class="media-body text-left">
+            <span class="d-block g-font-weight-500 g-font-size-default text-uppercase mb-2">Office Hours</span>
+            <ul class="list-unstyled mb-0">
+              <li class="d-block g-color-gray-dark-v4">Mon - Fri: 09AM to 06PM</li>
+              <li class="d-block g-color-gray-dark-v4">Sat - Sun: 10AM to 04PM</li>
+            </ul>
+          </div>
+        </div>
+        <!-- End Media -->
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- End Contact Info -->
+
+  <div class="g-max-width-645 text-center mx-auto g-mb-70">
+    <h2 class="h1 mb-3">Contact Us</h2>
+    <p class="g-font-size-17 mb-0">Fill up the form and hit the "Send Message". One of our representatives will get back to you as soon as possible.</p>
+  </div>
+
+<div class="container g-py-100">
+<!-- Contact Form -->
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <form>
+        <div class="row">
+          <div class="col-md-6 form-group g-mb-20">
+            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded g-py-13 g-px-15" type="text" placeholder="Name">
+          </div>
+
+          <div class="col-md-6 form-group g-mb-20">
+            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded g-py-13 g-px-15" type="email" placeholder="Email">
+          </div>
+
+          <div class="col-md-6 form-group g-mb-20">
+            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded g-py-13 g-px-15" type="text" placeholder="Subject">
+          </div>
+
+          <div class="col-md-6 form-group g-mb-20">
+            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded g-py-13 g-px-15" type="tel" placeholder="Phone">
+          </div>
+
+          <div class="col-md-12 form-group g-mb-40">
+            <textarea class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover g-resize-none rounded g-py-13 g-px-15" rows="7" placeholder="Message"></textarea>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button class="btn u-btn-primary g-font-size-12 text-uppercase g-py-12 g-px-25" type="submit">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </div>
+<!-- End Contact Form -->
+</div>

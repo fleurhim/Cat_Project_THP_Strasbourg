@@ -1,0 +1,159 @@
+<!------------------------------------------------------- top navbar ------------------------------------------------------------->
+
+<div class="u-header__section g-brd-bottom g-brd-gray-light-v4 g-bg-black g-transition-0_3">
+          <div class="container">
+            <div class="row justify-content-between align-items-center g-mx-0--lg">
+              <div class="col-sm-auto g-hidden-sm-down">
+                <!-- Social Icons -->
+                <ul class="list-inline g-py-14 mb-0">
+                  <li class="list-inline-item">
+                    <a class="g-color-white-opacity-0_8 g-color-primary--hover g-pa-3" href="#">
+                      <i class="fab fa-facebook-f fa-5"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="g-color-white-opacity-0_8 g-color-primary--hover g-pa-3" href="#">
+                      <i class="fab fa-twitter fa-5"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="g-color-white-opacity-0_8 g-color-primary--hover g-pa-3" href="#">
+                      <i class="fab fa-instagram fa-5"></i>
+                    </a>
+                  </li>
+                </ul>
+                <!-- End Social Icons -->
+              </div>
+
+              <div class="col-sm-auto g-hidden-sm-down g-color-white-opacity-0_6 g-font-weight-400 g-pl-15 g-pl-0--sm g-py-14">
+                <i class="icon-communication-163 u-line-icon-pro g-font-size-18 g-valign-middle g-color-white-opacity-0_8 g-mr-10 g-mt-minus-2"></i>
+                +33 5 56 91 32 72
+              </div>
+
+              <div class="col-sm-auto g-pos-rel g-py-14">
+                <!-- List -->
+                <ul class="list-inline g-pt-1 mb-0">
+                  <!-- Currency -->
+                  <li class="list-inline-item g-pos-rel">
+                      <i class="g-ml-20--md mr-2 fa fa-euro"></i>
+                      Euro
+                  </li>
+                  <!-- End Currency -->
+                  <!-- Language -->
+                  <li class="list-inline-item g-pos-rel">
+                    English
+                  </li>
+                  <!-- End Language -->
+                </ul>
+                <!-- End List -->
+              </div>
+
+              <div class="col-sm-auto g-pos-rel g-py-14">
+                <!-- List -->
+                <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
+                  <li class="list-inline-item g-mx-4">
+                    <a class="g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" href="page-help-1.html">Help</a>
+                  </li>
+                  <li class="list-inline-item g-color-white-opacity-0_3 g-mx-4">|</li>
+                  <!-- Account -->
+                  <% if user_signed_in?%>
+                  <li class="list-inline-item dropdown">
+                    <a id="account-dropdown-invoker-2" class="g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" href="#" data-dropdown-hide-on-scroll="false" data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">
+                      Account
+                    </a>
+                    <ul id="account-dropdown-2" class="list-unstyled u-shadow-v29 g-pos-abs g-bg-white g-width-160 g-pb-5 g-mt-19 g-z-index-2" aria-labelledby="account-dropdown-invoker-2" style="animation-duration: 300ms;">
+                      <li>
+                        <%= link_to 'Signup', new_user_registration_path, class:"d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20" %>
+                      </li>
+                      <li>
+                        <%=link_to "Password recovery", edit_user_password_path, class:"d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"%>
+                      </li>
+                      <li>
+                        <%= link_to 'Your orders', root_path, class:"d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20" %>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="list-inline-item g-color-white-opacity-0_3 g-mx-4">|</li>
+                      <li class="list-inline-item g-mx-4">
+                        <%= link_to 'Checkout', destroy_user_session_path, method: :delete, class:"g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" %> 
+                      </li>
+                  </li>
+                  <%else%>
+                  <li class="list-inline-item g-mx-4">
+                    <%= link_to 'Signup', new_user_registration_path, class:"g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" %>
+                  </li>
+                    
+                  <li class="list-inline-item g-color-white-opacity-0_3 g-mx-4">|</li>
+                  <li class="list-inline-item g-mx-4">
+                    <%= link_to 'Login', new_user_session_path, class:"g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" %> 
+                  </li>
+                
+                  <%end%>
+
+                  <!-- End Account -->
+                </ul>
+                <!-- End List -->
+              </div>
+
+              <div class="col-sm-auto g-pr-15 g-pr-0--sm">
+                <!-- Basket -->
+                <div class="u-basket d-inline-block g-z-index-3">
+                  <div class="g-py-10 g-px-6">
+                    <a href="#" id="basket-bar-invoker" class="u-icon-v1 g-color-white-opacity-0_8 g-color-primary--hover g-font-size-17 g-text-underline--none--hover" aria-controls="basket-bar" aria-haspopup="true" aria-expanded="false" data-dropdown-event="hover" data-dropdown-target="#basket-bar" data-dropdown-type="css-animation" data-dropdown-duration="300" data-dropdown-hide-on-scroll="false" data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">
+                      <span class="u-badge-v1--sm g-color-white g-bg-primary g-font-size-11 g-line-height-1_4 g-rounded-50x g-pa-4" style="top: 7px !important; right: 3px !important;"> </span>
+                      <i class="icon-hotel-restaurant-105 u-line-icon-pro"></i>
+                    </a>
+                  </div>
+
+
+                    </div></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; display: block; height: 91px; max-height: 166px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div>
+                  </div>
+                </div>
+                <!-- End Basket -->
+              </div>
+            </div>
+          </div>
+        </div>
+<!------------------------------------------------------- End top navbar ------------------------------------------------------------->
+
+<!------------------------------------------------------- Second navbar ------------------------------------------------------------->
+<div class="u-header__section u-header__section--light g-bg-white">
+          <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
+            <div class="container">
+              <!-- Responsive Toggle Button -->
+              <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+                <span class="hamburger hamburger--slider g-pr-0">
+                  <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                  </span>
+                </span>
+              </button>
+              <!-- End Responsive Toggle Button -->
+
+              <!-- Logo -->
+              <%= link_to image_tag('logo_rd.png', width: 160), root_path, class:"navbar-brand" %>
+              <!-- End Logo -->
+
+              <!-- Navigation -->
+              <div id="navBar" class="collapse navbar-collapse align-items-center flex-sm-row g-pt-15 g-pt-0--lg">
+                <ul class="navbar-nav ml-auto">
+                  <!-- Home - Submenu -->
+                  <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl">
+                    <%=link_to "Home", root_path, id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20"%>
+
+
+                  <!-- Pages - Submenu -->
+                  <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl">
+                    <a id="nav-link--pages" class="nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20" href="#" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu--pages">
+                      Pages 
+                    </a>
+                  </li>
+                  <!-- End Pages - Submenu -->
+                </ul>
+              </div>
+              <!-- End Navigation -->
+            </div>
+          </nav>
+        </div>
+<!------------------------------------------------------- End Second navbar ------------------------------------------------------------->
+
