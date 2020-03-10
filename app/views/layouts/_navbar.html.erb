@@ -57,14 +57,11 @@
                   <li class="list-inline-item g-color-white-opacity-0_3 g-mx-4">|</li>
                   <!-- Account -->
                   <% if user_signed_in?%>
-                  <li class="list-inline-item">
+                  <li class="list-inline-item dropdown">
                     <a id="account-dropdown-invoker-2" class="g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" href="#" data-dropdown-hide-on-scroll="false" data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">
                       Account
                     </a>
-                    <ul id="account-dropdown-2" class="list-unstyled u-shadow-v29 g-pos-abs g-bg-white g-width-160 g-pb-5 g-mt-19 g-z-index-2 u-dropdown--css-animation u-dropdown--hidden" aria-labelledby="account-dropdown-invoker-2" style="animation-duration: 300ms;">
-                      <li>
-                        <%= link_to 'Login', new_user_session_path, class:"d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20" %>
-                      </li>
+                    <ul id="account-dropdown-2" class="list-unstyled u-shadow-v29 g-pos-abs g-bg-white g-width-160 g-pb-5 g-mt-19 g-z-index-2" aria-labelledby="account-dropdown-invoker-2" style="animation-duration: 300ms;">
                       <li>
                         <%= link_to 'Signup', new_user_registration_path, class:"d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20" %>
                       </li>
