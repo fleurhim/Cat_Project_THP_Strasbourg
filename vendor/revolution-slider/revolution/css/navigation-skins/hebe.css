@@ -45,7 +45,7 @@ website:    http://www.themepunch.com
 .hebe.tparrows:hover:before {
  color:#000;
       }
-.tp-title-wrap { 
+.tp-title-wrap {
   position:absolute;
   z-index:0;
   display:inline-block;
@@ -57,12 +57,12 @@ website:    http://www.themepunch.com
   margin-left:0px;
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
-  transform:scaleX(0);  
-  -webkit-transform:scaleX(0);  
-  transform-origin:0% 50%; 
+  transform:scaleX(0);
+  -webkit-transform:scaleX(0);
+  transform-origin:0% 50%;
    -webkit-transform-origin:0% 50%;
 }
- .hebe.tp-rightarrow .tp-title-wrap { 
+ .hebe.tp-rightarrow .tp-title-wrap {
    right:0px;
    -webkit-transform-origin:100% 50%;
  }
@@ -82,7 +82,7 @@ website:    http://www.themepunch.com
 }
 
 .hebe.tp-rightarrow .tp-arr-titleholder {
-   margin-left:0px; 
+   margin-left:0px;
    padding:0px 90px 0px 20px;
  }
 
@@ -125,7 +125,7 @@ website:    http://www.themepunch.com
   width:3px;
   height:3px;
   position:absolute;
-  background:#fff;  
+  background:#fff;
   cursor: pointer;
   border:5px solid #222;
   border-radius:50%;
@@ -161,8 +161,8 @@ website:    http://www.themepunch.com
   transform-origin:50% 100%;
   -webkit-transform-origin:50% 100%;
 border-radius:6px;
-  
-  
+
+
 }
 .hebe .tp-bullet:hover .tp-bullet-image {
   display:block;
@@ -181,7 +181,7 @@ border-radius:6px;
     font-size:13px;
     font-weight:700;
     text-transform:uppercase;
-    font-family:"Roboto Slab"
+    font-family:"Roboto Slab";
     margin-bottom:5px;
 }
 

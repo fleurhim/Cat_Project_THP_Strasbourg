@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@font-face {
+/*@font-face {
   font-family: "communication-48-x-48";
   src:url("fonts/communication-48-x-48.eot");
   src:url("fonts/communication-48-x-48.eot?#iefix") format("embedded-opentype"),
@@ -11,7 +11,7 @@
   font-style: normal;
 
 }
-
+*/
 [data-icon]:before {
   font-family: "communication-48-x-48" !important;
   content: attr(data-icon);
