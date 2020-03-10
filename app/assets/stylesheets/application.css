@@ -10,6 +10,42 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ *
+ * CSS Global Compulsory
+ *= require bootstrap/bootstrap.min
+ *= require bootstrap/offcanvas
+ *= require dzsparallaxer/dzsparallaxer
+ *= require dzsparallaxer/dzsscroller/scroller
+ *= require dzsparallaxer/advancedscroller/plugin
+ *= require slick-carousel/slick/slick
+ *= require animate
+ *= require hs-megamenu/src/hs.megamenu
+ *= require hamburgers/hamburgers.min
+ *= require malihu-scrollbar/jquery.mCustomScrollbar.min
+ *= require fancybox/jquery.fancybox
+
+ * CSS Global Icons
+ *= require icon-awesome/css/font-awesome
+ *= require icon-line/css/simple-line-icons
+ *= require icon-etlinefont/style
+ *= require icon-line-pro/style
+ *= require icon-hs/style
+ *= require chosen/chosen
+
+ * Revolution Slider
+ *= require revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke
+ *= require revolution-slider/revolution/css/settings-source
+ *= require revolution-slider/revolution/css/layers
+ *= require revolution-slider/revolution/css/navigation
+
+ * CSS Unify
+ *= require unify-core
+ *= require unify
+ *= require unify-components
+ *= require unify-globals
+
+ * CSS Customization
+ *= require custom
+ *= require_directory .
  *= require_self
  */
