@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :items
   resources :users, only: [:show, :index] do
     resources :avatars, only: [:create]
-  	resources :carts, only: [:show]
+    resources :carts, only: [:show]
   end
 end

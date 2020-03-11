@@ -1,0 +1,132 @@
+<form class="js-validate js-step-form" data-progress-id="#stepFormProgress" data-steps-id="#stepFormSteps" novalidate="novalidate">
+    <div class="g-mb-100">
+    <!-- Step Titles -->
+    <ul id="stepFormProgress" class="js-step-progress row justify-content-center list-inline text-center g-font-size-17 mb-0">
+        <li class="col-3 list-inline-item g-mb-20 g-mb-0--sm active">
+        <span class="d-block u-icon-v2 u-icon-size--sm g-rounded-50x g-brd-primary g-color-primary g-color-white--parent-active g-bg-primary--active g-color-white--checked g-bg-primary--checked mx-auto mb-3">
+            <i class="g-font-style-normal g-font-weight-700 g-hide-check">1</i>
+            <i class="fa fa-check g-show-check"></i>
+        </span>
+        <h4 class="g-font-size-16 text-uppercase mb-0">Shopping Cart</h4>
+        </li>
+
+        <li class="col-3 list-inline-item g-mb-20 g-mb-0--sm">
+        <span class="d-block u-icon-v2 u-icon-size--sm g-rounded-50x g-brd-gray-light-v2 g-color-gray-dark-v5 g-brd-primary--active g-color-white--parent-active g-bg-primary--active g-color-white--checked g-bg-primary--checked mx-auto mb-3">
+            <i class="g-font-style-normal g-font-weight-700 g-hide-check">2</i>
+            <i class="fa fa-check g-show-check"></i>
+        </span>
+        <h4 class="g-font-size-16 text-uppercase mb-0">Shipping</h4>
+        </li>
+
+        <li class="col-3 list-inline-item">
+        <span class="d-block u-icon-v2 u-icon-size--sm g-rounded-50x g-brd-gray-light-v2 g-color-gray-dark-v5 g-brd-primary--active g-color-white--parent-active g-bg-primary--active g-color-white--checked g-bg-primary--checked mx-auto mb-3">
+            <i class="g-font-style-normal g-font-weight-700 g-hide-check">3</i>
+            <i class="fa fa-check g-show-check"></i>
+        </span>
+        <h4 class="g-font-size-16 text-uppercase mb-0">Payment &amp; Review</h4>
+        </li>
+    </ul>
+    <!-- End Step Titles -->
+    </div>
+
+    <div id="stepFormSteps">
+    <!-- Shopping Cart -->
+    <div id="step1" class="active">
+        <div class="row">
+        <div class="col-md-8 g-mb-30">
+            <!-- Products Block -->
+            <div class="g-overflow-x-scroll g-overflow-x-visible--lg">
+            <table class="text-center w-100">
+                <thead class="h6 g-brd-bottom g-brd-gray-light-v3 g-color-black text-uppercase">
+                <tr>
+                    <th class="g-font-weight-400 text-left g-pb-20">Product</th>
+                    <th class="g-font-weight-400 g-width-130 g-pb-20">Price</th>
+                    <th class="g-font-weight-400 g-width-50 g-pb-20">Qty</th>
+                    <th class="g-font-weight-400 g-width-130 g-pb-20">Total</th>
+                    <th></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <!-- Item-->
+                <% @items.each do |item|%>
+                    <%= render 'show', item: item %>
+                <% end %>
+                </tbody>
+            </table>
+            </div>
+            <!-- End Products Block -->
+        </div>
+
+        <div class="col-md-4 g-mb-30">
+            <!-- Summary -->
+            <div class="g-bg-gray-light-v5 g-pa-20 g-pb-50 mb-4">
+            <h4 class="h6 text-uppercase mb-3">Summary</h4>
+
+            <div class="d-flex justify-content-between mb-2">
+                <span class="g-color-black">Subtotal</span>
+            <%@items.each do |item|%>
+                <span class="g-color-black g-font-weight-300"><%=item.price%></span>
+            </div>
+            <div class="d-flex justify-content-between">
+                <span class="g-color-black">Order Total</span>
+                <span class="g-color-black g-font-weight-300"><%=item.price%></span>
+            </div>
+            <%end%>
+        </div>
+            <!-- End Summary -->
+
+            <button class="btn btn-block u-btn-outline-black g-brd-gray-light-v1 g-bg-black--hover g-font-size-13 text-uppercase g-py-15 mb-4" type="button">Update Shopping Cart</button>
+            <button class="btn btn-block u-btn-primary g-font-size-13 text-uppercase g-py-15 mb-4" type="button" data-next-step="#step2">Proceed to Payment</button>
+
+        </div>
+        </div>
+    </div>
+    <!-- End Shopping Cart -->
+
+    <!-- Payment & Review -->
+    <div id="step3" style="display: none;">
+        <div class="row">
+        <div class="col-md-8 g-mb-30">
+            <!-- Payment Methods -->
+            <ul class="list-unstyled mb-5">
+            <li class="g-brd-bottom g-brd-gray-light-v3 pb-3 my-3">
+                <label class="form-check-inline u-check d-block u-link-v5 g-color-gray-dark-v4 g-color-primary--hover g-pl-30">
+                <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radInline1_1" type="radio">
+                    <span class="d-block u-check-icon-checkbox-v4 g-absolute-centered--y g-left-0">
+                    <i class="fa" data-check-icon=""></i>
+                    </span>
+                    Pay with
+                <img class="g-width-70 ml-2" src="assets/img-temp/200x55/img1.jpg" alt="Image Description">
+                </label>
+            </li>
+            <li class="my-3">
+                <label class="form-check-inline u-check d-block u-link-v5 g-color-gray-dark-v4 g-color-primary--hover g-pl-30">
+                <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radInline1_1" type="radio" checked="">
+                    <span class="d-block u-check-icon-checkbox-v4 g-absolute-centered--y g-left-0">
+                    <i class="fa" data-check-icon=""></i>
+                    </span>
+                    Pay with Credit Card
+                <img class="g-width-50 ml-2" src="assets/img-temp/200x55/img2.jpg" alt="Image Description">
+                </label>
+            </li>
+            </ul>
+            <!-- End Payment Methods -->
+
+            <!-- Alert -->
+            <div class="alert g-brd-around g-brd-gray-dark-v5 rounded-0 g-pa-0 mb-4" role="alert">
+            <div class="media">
+                <div class="d-flex g-brd-right g-brd-gray-dark-v5 g-pa-15">
+                <span class="u-icon-v1 u-icon-size--xs g-color-black">
+                    <i class="align-middle icon-media-065 u-line-icon-pro"></i>
+                </span>
+                </div>
+                <div class="media-body g-pa-15">
+                <p class="g-color-black m-0">My billing and shipping address are the correct</p>
+                </div>
+            </div>
+            </div>
+            <!-- End Alert -->
+        </div>
+    </div>
+</form>
