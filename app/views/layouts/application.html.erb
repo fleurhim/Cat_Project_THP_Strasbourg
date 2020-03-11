@@ -12,8 +12,8 @@
   </head>
 
   <body>
-  <%=render "layouts/navbar", cart: @cart %>
+    <%= render "layouts/navbar" , cart: @cart %>
     <%= yield %>
-  <%=render "layouts/footer"%>
+    <%=render "layouts/footer"%>
   </body>
 </html>

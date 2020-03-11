@@ -40,16 +40,16 @@
             <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15", placeholder: "Current password (mandatory to confirm)" %>
           </div>
 
-          <div class="mb-4">
-            <%= f.label :avatar, "Ajouter une photo de profil"%><br/>
-            <%= f.file_field :avatar %>
-          </div> 
-
           <div class="actions mt-5">
             <%= f.submit "Update", class: "btn btn-md btn-block u-btn-primary g-rounded-50 g-py-13 mb-4" %>
           </div>
         <% end %>
         </div>
+
+        <%= form_tag user_avatars_path(@user), multipart: true do %>
+          <%= file_field_tag :avatar %>
+          <%= submit_tag "mettre à jour" %>
+        <% end %>
 
         <br><hr>
         <h3>Cancel my account</h3>

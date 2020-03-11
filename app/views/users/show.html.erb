@@ -6,7 +6,11 @@
 <!-- User Image -->
   <div class="u-block-hover g-pos-rel">
     <figure>
-      <img class="img-fluid w-100 u-block-hover__main--zoom-v1" src="https://i.pinimg.com/236x/c6/98/8c/c6988cdab0fae15d71741475fbb45514--professional-headshots-women-professional-portrait.jpg" alt="Image Description">
+      <%if @user.avatar.attached?%>
+        <%= image_tag @user.avatar, alt: 'avatar' %>
+      <%else%>
+        <p>=== No avatar ===</p>
+      <%end%>
     </figure>
   </div>
   <!-- User Image -->

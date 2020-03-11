@@ -61,9 +61,15 @@
           <!-- Basket -->
           <div class="u-basket d-inline-block g-z-index-3">
             <div class="g-py-10 g-px-6">
-              <%= link_to user_cart_path("10", cart.id.to_s), id:"basket-bar-invoker", class:"u-icon-v1 g-color-white-opacity-0_8 g-color-primary--hover g-font-size-17 g-text-underline--none--hover" do %>
-                <i class="fas fa-shopping-bag fa-7"></i>
-              <%end%>
+              <% if user_signed_in? %>
+                <%= link_to cart_path(cart.id), id:"basket-bar-invoker", class:"u-icon-v1 g-color-white-opacity-0_8 g-color-primary--hover g-font-size-17 g-text-underline--none--hover" do %>
+                  <i class="fas fa-shopping-bag fa-7"></i>
+                <% end %>
+              <% else %>
+                <%= link_to new_user_session_path, id:"basket-bar-invoker", class:"u-icon-v1 g-color-white-opacity-0_8 g-color-primary--hover g-font-size-17 g-text-underline--none--hover" do %>
+                  <i class="fas fa-shopping-bag fa-7"></i>
+                <% end %>
+              <% end %>
             </div>
             </div></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; display: block; height: 91px; max-height: 166px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div>
             </div>

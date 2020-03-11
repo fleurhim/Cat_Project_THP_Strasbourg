@@ -7,13 +7,15 @@ class ApplicationController < ActionController::Base
 	  devise_parameter_sanitizer.permit(:account_update) {|u| u.permit(:first_name, :last_name, :address, :current_password, :email, :password, :password_confirmation)}
 	end
 
- 
 	private
-	
+
 	def set_cart
-		@cart=Cart.find_by(customer_id: "10")
-		rescue ActiveRecord::RecordNotFound
-		@cart = Cart.create
-		session[:cart_id] = @cart.id
+		if current_user
+			@cart = Cart.find_by(customer_id: current_user.id)
+			if @cart.nil?
+				@cart = Cart.create(customer_id: current_user.id)
+			end
+		end
 	end
+
 end

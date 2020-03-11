@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class JointablecartsitemsControllerTest < ActionDispatch::IntegrationTest
+class JoinTableCartItemsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

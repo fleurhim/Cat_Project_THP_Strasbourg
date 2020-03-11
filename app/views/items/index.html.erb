@@ -88,9 +88,17 @@
             <span class="g-color-black g-line-height-1"><%= item.price %>€</span>
             <ul class="list-inline g-color-gray-light-v2 g-font-size-14 g-line-height-1">
               <li class="list-inline-item align-middle g-brd-right g-pr-10 g-mr-6">
-                <a href="#" class:"g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" >
+                
+              <% if user_signed_in? %>
+                <%= link_to cart_join_table_cart_items_path(@cart.id, "item" => item.id), {"method" => "post"} , class:"g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" do %>
                   <i class="icon-finance-100 u-line-icon-pro"></i>
-                </a>
+                <% end %>
+              <% else %>
+                <%= link_to new_user_session_path , class:"g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" do %>
+                  <i class="icon-finance-100 u-line-icon-pro"></i>
+                <% end %>
+              <% end %>
+
               </li>
             </ul>
           </footer>
