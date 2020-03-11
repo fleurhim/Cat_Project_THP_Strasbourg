@@ -50,6 +50,15 @@ end
     content.save
 end 
 
+10.times do
+    order = Order.create(
+        user_id: rand(User.first.id..User.last.id),
+        cart_id: rand(Cart.first.id..Cart.last.id),
+        delivery_address: Faker::Address.street_address, 
+        items_number: Faker::Number.number(digits: 1),
+        total_order: Faker::Number.decimal(l_digits: 2)
+        )
+end
 
 
 

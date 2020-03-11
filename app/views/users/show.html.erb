@@ -1,15 +1,113 @@
-<h1>Page Profil</h1>
+<section class="g-mb-100">
+<div class="container">
+<div class="row">
 
-<p>Bienvenue sur la page d'ajout d'un avatar pour le User portant l'id : <%=@user.id%></p>
-<h3>Avatar actuel</h3>
-<%if @user.avatar.attached?%>
-  <%= image_tag @user.avatar, alt: 'avatar' %>
-<%else%>
-  <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
-<%end%>
+<div class="col-lg-3 g-mb-50 g-mb-0--lg">
+<!-- User Image -->
+  <div class="u-block-hover g-pos-rel">
+    <figure>
+      <img class="img-fluid w-100 u-block-hover__main--zoom-v1" src="https://i.pinimg.com/236x/c6/98/8c/c6988cdab0fae15d71741475fbb45514--professional-headshots-women-professional-portrait.jpg" alt="Image Description">
+    </figure>
+  </div>
+  <!-- User Image -->
+</div>
 
-<h3>Changer d'avatar ?</h3>
-<%= form_tag user_avatars_path(@user), multipart: true do %>
-  <%= file_field_tag :avatar %>
-  <%= submit_tag "mettre à jour" %>
-<% end %>
+  <div class="col-lg-9">
+    <div class="card-block g-pa-0">
+      <!-- Edit Profile -->
+      <div class="tab-pane fade show active" id="nav-1-1-default-hor-left-underline--1" role="tabpanel" data-parent="#nav-1-1-default-hor-left-underline">
+        <h2 class="h4 g-font-weight-300">Manage your Name, ID and Email Addresses</h2>
+        <p>Below are name, email addresse, contacts and more on file for your account.</p>
+
+        <ul class="list-unstyled g-mb-30">
+          <!-- Name -->
+          <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
+            <div class="g-pr-10">
+              <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Name</strong>
+              <span class="align-top"><%= @user.first_name%> <%=@user.last_name%></span>
+            </div>
+            <span>
+               <%= link_to "", edit_user_registration_path, class: "icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"%>
+              </span>
+          </li>
+          <!-- End Name -->
+
+          <!-- Primary Email Address -->
+          <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
+            <div class="g-pr-10">
+              <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Primary email address</strong>
+              <span class="align-top"><%= @user.email%></span>
+            </div>
+            <span>
+              <%= link_to "", edit_user_registration_path, class: "icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"%>
+              </span>
+          </li>
+          <!-- End Primary Email Address -->
+
+          <!-- Address -->
+          <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
+            <div class="g-pr-10">
+              <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Address</strong>
+              <span class="align-top"><%= @user.address%></span>
+            </div>
+            <span>
+              <%= link_to "", edit_user_registration_path, class: "icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"%>
+              </span>
+          </li>
+          <!-- End Address -->
+        </ul>
+
+        <div class="text-sm-right">
+          <%= link_to "Back", :back, class: "btn u-btn-darkgray rounded-0 g-py-12 g-px-25 g-mr-10"%>
+          <%= link_to "Edit Profil", edit_user_registration_path, class: "btn u-btn-primary rounded-0 g-py-12 g-px-25"%>
+        </div>
+      </div>
+      <!-- End Edit Profile -->
+    </div><br><br><br><br>
+
+<h2 class="h4 g-font-weight-300">History of Orders</h2>
+<p>Below are your past orders.</p>
+  <!-- Product Table -->
+  <div class="table-responsive">
+    <table class="table table-bordered u-table--v2">
+      <thead class="text-uppercase g-letter-spacing-1">
+        <tr>
+          <th class="g-font-weight-300 g-color-black">Order ID</th>
+          <th class="g-font-weight-300 g-color-black g-min-width-200">Delivery Address</th>
+          <th class="g-font-weight-300 g-color-black">Date of Order</th>
+          <th class="g-font-weight-300 g-color-black">Contacts</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @orders.each do |order| %>
+        <tr>
+          <td class="align-middle text-nowrap">
+            <h4 class="h6 g-mb-2"><%= order.id %></h4>
+          </td>
+          <td class="align-middle">
+            <div class="d-flex">
+              <i class="icon-location-pin g-font-size-18 g-color-gray-dark-v5 g-pos-rel g-top-5 g-mr-7"></i>
+              <span><%= order.delivery_address %></span>
+            </div>
+          </td>
+          <td class="align-middle text-nowrap">
+            <h4 class="h6 g-mb-2"><%= order.created_at %></h4>
+          </td>
+          <td class="align-middle text-nowrap">
+            <span class="d-block g-mb-5">
+              <i class="icon-phone g-font-size-16 g-color-gray-dark-v5 g-pos-rel g-top-2 g-mr-5"></i> +1 4768 97655
+            </span>
+            <span class="d-block">
+              <i class="icon-envelope g-font-size-16 g-color-gray-dark-v5 g-pos-rel g-top-2 g-mr-5"></i> cute_kitten@kitten.com
+            </span>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <!-- End Product Table -->
+</div>
+</div>
+</div>
+</section>
