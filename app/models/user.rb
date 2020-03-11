@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
 	has_many :items, class_name: "Item", foreign_key: "admin_id"
   has_many :customers, class_name: "Cart", foreign_key: "cart_id"
-  
+
   has_one_attached :avatar
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

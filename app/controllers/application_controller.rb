@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 	private
 	
 	def set_cart
-		@cart=Cart.find_by(customer_id: "23")
+		@cart=Cart.find_by(customer_id: "10")
 		rescue ActiveRecord::RecordNotFound
 		@cart = Cart.create
 		session[:cart_id] = @cart.id
