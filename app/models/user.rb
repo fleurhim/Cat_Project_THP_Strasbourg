@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_one_attached :avatar
 	after_create :welcome_send
 
 	has_many :items, foreign_key: 'admin_id', class_name: "Item"
