@@ -41,20 +41,6 @@
 //= require appear
 //= require gmaps/gmaps.min
 
-// ---- JS Revolution Slider ----
-//= require revolution-slider/revolution/js/jquery.themepunch.tools.min
-//= require revolution-slider/revolution/js/jquery.themepunch.revolution.min
-//= require revolution-slider/revolution-addons/slicey/js/revolution.addon.slicey.min
-//= require revolution-slider/revolution/js/extensions/revolution.extension.actions.min
-//= require revolution-slider/revolution/js/extensions/revolution.extension.carousel.min
-//= require revolution-slider/revolution/js/extensions/revolution.extension.kenburn.min
-//= require revolution-slider/revolution/js/extensions/revolution.extension.layeranimation.min
-//= require revolution-slider/revolution/js/extensions/revolution.extension.migration.min
-//= require revolution-slider/revolution/js/extensions/revolution.extension.navigation.min
-//= require revolution-slider/revolution/js/extensions/revolution.extension.parallax.min
-//= require revolution-slider/revolution/js/extensions/revolution.extension.slideanims.min
-//= require revolution-slider/revolution/js/extensions/revolution.extension.video.min
-
 // ---- JS Unify ----
 //= require hs.core
 //= require components/hs.header

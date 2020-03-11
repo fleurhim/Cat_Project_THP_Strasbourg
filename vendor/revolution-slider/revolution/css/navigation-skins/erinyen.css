@@ -18,7 +18,7 @@ website:    http://www.themepunch.com
   position:absolute;
   display:block;
   z-index:100;
-  border-radius:35px;   
+  border-radius:35px;
 }
 
 .erinyen.tparrows:before {
@@ -27,7 +27,7 @@ website:    http://www.themepunch.com
   color:#fff;
   display:block;
   line-height: 70px;
-  text-align: center;    
+  text-align: center;
   z-index:2;
   position:relative;
 }
@@ -38,7 +38,7 @@ website:    http://www.themepunch.com
   content: "\e825";
 }
 
-.erinyen .tp-title-wrap { 
+.erinyen .tp-title-wrap {
   position:absolute;
   z-index:1;
   display:inline-block;
@@ -49,13 +49,13 @@ website:    http://www.themepunch.com
   top:0px;
   margin-left:0px;
   border-radius:35px;
-  overflow:hidden; 
+  overflow:hidden;
   transition: opacity 0.3s;
   -webkit-transition:opacity 0.3s;
   -moz-transition:opacity 0.3s;
   -webkit-transform: scale(0);
   -moz-transform: scale(0);
-  transform: scale(0);  
+  transform: scale(0);
   visibility:hidden;
   opacity:0;
 }
@@ -67,8 +67,8 @@ website:    http://www.themepunch.com
   opacity:1;
   visibility:visible;
 }
-        
- .erinyen.tp-rightarrow .tp-title-wrap { 
+
+ .erinyen.tp-rightarrow .tp-title-wrap {
    right:0px;
    margin-right:0px;margin-left:0px;
    -webkit-transform-origin:100% 50%;
@@ -78,7 +78,7 @@ website:    http://www.themepunch.com
  }
 
 
-.erinyen.tp-leftarrow .tp-title-wrap { 
+.erinyen.tp-leftarrow .tp-title-wrap {
    padding-left:20px;
   padding-right:10px;
 }
@@ -88,7 +88,7 @@ website:    http://www.themepunch.com
    position:relative;
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
-  transform:translateX(200px);  
+  transform:translateX(200px);
   text-transform:uppercase;
   color:#fff;
   font-weight:600;
@@ -97,7 +97,7 @@ website:    http://www.themepunch.com
   white-space:nowrap;
   padding:0px 20px;
   margin-left:11px;
-  opacity:0;  
+  opacity:0;
 }
 
 .erinyen .tp-arr-imgholder {
@@ -119,7 +119,7 @@ website:    http://www.themepunch.com
    background:rgba(0,0,0,0.5);
         }
 .erinyen.tp-rightarrow .tp-arr-titleholder {
-   transform:translateX(-200px); 
+   transform:translateX(-200px);
    margin-left:0px; margin-right:11px;
       }
 
@@ -156,7 +156,7 @@ website:    http://www.themepunch.com
 	width:13px;
 	height:13px;
 	position:absolute;
-	background:#111;	
+	background:#111;
 	border-radius:50%;
 	cursor: pointer;
 	box-sizing:content-box;
@@ -205,7 +205,7 @@ opacity:1
   color:rgba(255,255,255,0.75);
   display:block;
   line-height: 12px;
-  text-align: left;    
+  text-align: left;
   z-index:2;
   position:absolute;
   top:20px;
@@ -223,7 +223,7 @@ opacity:1
   color:#fff;
   display:block;
   line-height: 15px;
-  text-align: left;    
+  text-align: left;
   z-index:2;
   position:absolute;
   top:0px;
@@ -261,7 +261,7 @@ opacity:1
     font-size:13px;
     font-weight:700;
     text-transform:uppercase;
-    font-family:"Roboto Slab"
+    font-family:"Roboto Slab";
     margin-bottom:5px;
 }
 
@@ -272,5 +272,5 @@ opacity:1
     line-height:25px;
 	font-family:"Roboto Slab";
 }
-      
+
 
