@@ -49,7 +49,9 @@
 
                 <tbody>
                 <!-- Item-->
-                <%= render 'show', item:@item%>
+                <% @items.each do |item|%>
+                    <%= render 'show', item: item %>
+                <% end %>
                 </tbody>
             </table>
             </div>
@@ -63,13 +65,15 @@
 
             <div class="d-flex justify-content-between mb-2">
                 <span class="g-color-black">Subtotal</span>
-                <span class="g-color-black g-font-weight-300"><%=@item.price%></span>
+            <%@items.each do |item|%>
+                <span class="g-color-black g-font-weight-300"><%=item.price%></span>
             </div>
             <div class="d-flex justify-content-between">
                 <span class="g-color-black">Order Total</span>
-                <span class="g-color-black g-font-weight-300"><%=@item.price%></span>
+                <span class="g-color-black g-font-weight-300"><%=item.price%></span>
             </div>
-            </div>
+            <%end%>
+        </div>
             <!-- End Summary -->
 
             <button class="btn btn-block u-btn-outline-black g-brd-gray-light-v1 g-bg-black--hover g-font-size-13 text-uppercase g-py-15 mb-4" type="button">Update Shopping Cart</button>

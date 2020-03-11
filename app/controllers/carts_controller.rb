@@ -1,7 +1,6 @@
 class CartsController < ApplicationController 
     def show
-        @cart=Cart.find(params[:id])
-        @jointable= JoinTableCartItem.where(cart_id: params[:id])
-        @item = Item.where(id: @jointable)
+      @cart=Cart.find_by(customer_id: "23")
+      @items=@cart.items
     end
 end
