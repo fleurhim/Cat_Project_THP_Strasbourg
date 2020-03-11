@@ -79,29 +79,33 @@
         </tr>
       </thead>
       <tbody>
-        <% @orders.each do |order| %>
-        <tr>
-          <td class="align-middle text-nowrap">
-            <h4 class="h6 g-mb-2"><%= order.id %></h4>
-          </td>
-          <td class="align-middle">
-            <div class="d-flex">
-              <i class="icon-location-pin g-font-size-18 g-color-gray-dark-v5 g-pos-rel g-top-5 g-mr-7"></i>
-              <span><%= order.delivery_address %></span>
-            </div>
-          </td>
-          <td class="align-middle text-nowrap">
-            <h4 class="h6 g-mb-2"><%= order.created_at %></h4>
-          </td>
-          <td class="align-middle text-nowrap">
-            <span class="d-block g-mb-5">
-              <i class="icon-phone g-font-size-16 g-color-gray-dark-v5 g-pos-rel g-top-2 g-mr-5"></i> +1 4768 97655
-            </span>
-            <span class="d-block">
-              <i class="icon-envelope g-font-size-16 g-color-gray-dark-v5 g-pos-rel g-top-2 g-mr-5"></i> cute_kitten@kitten.com
-            </span>
-          </td>
-        </tr>
+        <% if @order.nil? %>
+        <p>  ⚠ Vous n'avez pas encore de commande ⚠ </p>
+        <% else %>
+          <% @orders.each do |order| %>
+          <tr>
+            <td class="align-middle text-nowrap">
+              <h4 class="h6 g-mb-2"><%= order.id %></h4>
+            </td>
+            <td class="align-middle">
+              <div class="d-flex">
+                <i class="icon-location-pin g-font-size-18 g-color-gray-dark-v5 g-pos-rel g-top-5 g-mr-7"></i>
+                <span><%= order.delivery_address %></span>
+              </div>
+            </td>
+            <td class="align-middle text-nowrap">
+              <h4 class="h6 g-mb-2"><%= order.created_at %></h4>
+            </td>
+            <td class="align-middle text-nowrap">
+              <span class="d-block g-mb-5">
+                <i class="icon-phone g-font-size-16 g-color-gray-dark-v5 g-pos-rel g-top-2 g-mr-5"></i> +1 4768 97655
+              </span>
+              <span class="d-block">
+                <i class="icon-envelope g-font-size-16 g-color-gray-dark-v5 g-pos-rel g-top-2 g-mr-5"></i> cute_kitten@kitten.com
+              </span>
+            </td>
+          </tr>
+          <% end %>
         <% end %>
       </tbody>
     </table>
