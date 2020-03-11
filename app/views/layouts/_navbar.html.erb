@@ -54,106 +54,18 @@
             <li class="list-inline-item g-mx-4">
               <a class="g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" href="page-help-1.html">Help</a>
             </li>
-            <li class="list-inline-item g-color-white-opacity-0_3 g-mx-4">|</li>
-            <!-- Account -->
-            <% if user_signed_in?%>
-            <li class="list-inline-item dropdown">
-              <a id="account-dropdown-invoker-2" class="g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" href="#" data-dropdown-hide-on-scroll="false" data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">
-                Account
-              </a>
-              <ul id="account-dropdown-2" class="list-unstyled u-shadow-v29 g-pos-abs g-bg-white g-width-160 g-pb-5 g-mt-19 g-z-index-2" aria-labelledby="account-dropdown-invoker-2" style="animation-duration: 300ms;">
-                <li>
-                  <%= link_to 'Signup', new_user_registration_path, class:"d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20" %>
-                </li>
-                <li>
-                  <%=link_to "Password recovery", edit_user_password_path, class:"d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"%>
-                </li>
-                <li>
-                  <%= link_to 'Your orders', root_path, class:"d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20" %>
-                </li>
-              </ul>
-            </li>
-            <li class="list-inline-item g-color-white-opacity-0_3 g-mx-4">|</li>
-                <li class="list-inline-item g-mx-4">
-                  <%= link_to 'Checkout', destroy_user_session_path, method: :delete, class:"g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" %> 
-                </li>
-            </li>
-            <%else%>
-            <li class="list-inline-item g-mx-4">
-              <%= link_to 'Signup', new_user_registration_path, class:"g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" %>
-            </li>
+          </ul>
+        </div>
               
-            <li class="list-inline-item g-color-white-opacity-0_3 g-mx-4">|</li>
-            <li class="list-inline-item g-mx-4">
-              <%= link_to 'Login', new_user_session_path, class:"g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" %> 
-            </li>
-          
-            <%end%>
-
-              <div class="col-sm-auto g-pos-rel g-py-14">
-                <!-- List -->
-                <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
-                  <li class="list-inline-item g-mx-4">
-                    <a class="g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" href="page-help-1.html">Help</a>
-                  </li>
-                  <li class="list-inline-item g-color-white-opacity-0_3 g-mx-4">|</li>
-                  <!-- Account -->
-                  <% if user_signed_in?%>
-                  <li class="list-inline-item dropdown">
-                    <a id="account-dropdown-invoker-2" class="g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" href="#" data-dropdown-hide-on-scroll="false" 
-                    data-dropdown-animation-in="fadeIn" 
-                    data-dropdown-animation-out="fadeOut"    
-                    aria-controls="account-dropdown-2"
-                     aria-haspopup="true"
-                     aria-expanded="false"
-                     data-dropdown-event="hover"
-                     data-dropdown-target="#account-dropdown-2"
-                     data-dropdown-type="css-animation"
-                     data-dropdown-duration="300">
-                      Account
-                    </a>
-                    <ul id="account-dropdown-2" class="list-unstyled u-shadow-v29 g-pos-abs g-bg-white g-width-160 g-pb-5 g-mt-19 g-z-index-2" aria-labelledby="account-dropdown-invoker-2" aria-labelledby="account-dropdown-invoker-2">
-                      <li>
-                        <%= link_to 'Signup', new_user_registration_path, class: "d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20" %>
-                      </li>
-                      <li>
-                        <%=link_to "Password recovery", edit_user_password_path, class: "d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"%>
-                      </li>
-                      <li>
-                        <%= link_to 'Your orders', root_path, class: "d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20" %>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="list-inline-item g-color-white-opacity-0_3 g-mx-4">|</li>
-                      <li class="list-inline-item g-mx-4">
-                        <%= link_to 'Checkout', destroy_user_session_path, method: :delete, class: "g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" %> 
-                      </li>
-                  </li>
-                  <%else%>
-                  <li class="list-inline-item g-mx-4">
-                    <%= link_to 'Signup', new_user_registration_path, class: "g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" %>
-                  </li>
-                    
-                  <li class="list-inline-item g-color-white-opacity-0_3 g-mx-4">|</li>
-                  <li class="list-inline-item g-mx-4">
-                    <%= link_to 'Login', new_user_session_path, class: "g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" %> 
-                  </li>
-                
-                  <%end%>
-
-        <div class="col-sm-auto g-pr-15 g-pr-0--sm">
+         <div class="col-sm-auto g-pr-15 g-pr-0--sm">
           <!-- Basket -->
           <div class="u-basket d-inline-block g-z-index-3">
             <div class="g-py-10 g-px-6">
-          
-              <%= link_to user_cart_path("23", cart.id.to_s), id:"basket-bar-invoker", class:"u-icon-v1 g-color-white-opacity-0_8 g-color-primary--hover g-font-size-17 g-text-underline--none--hover" do %>
-                <i class="icon-hotel-restaurant-105 u-line-icon-pro"></i>
+              <%= link_to user_cart_path("10", cart.id.to_s), id:"basket-bar-invoker", class:"u-icon-v1 g-color-white-opacity-0_8 g-color-primary--hover g-font-size-17 g-text-underline--none--hover" do %>
+                <i class="fas fa-shopping-bag fa-7"></i>
               <%end%>
-
             </div>
-
-
-              </div></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; display: block; height: 91px; max-height: 166px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div>
+            </div></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; display: block; height: 91px; max-height: 166px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div>
             </div>
           </div>
           <!-- End Basket -->
@@ -185,16 +97,31 @@
       <div id="navBar" class="collapse navbar-collapse align-items-center flex-sm-row g-pt-15 g-pt-0--lg">
         <ul class="navbar-nav ml-auto">
           <!-- Home - Submenu -->
-          <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl">
+          <li class="nav-item g-mx-10--lg g-mx-15--xl">
             <%=link_to "Home", root_path, id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20"%>
-
-
-          <!-- Pages - Submenu -->
-          <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl">
-            <a id="nav-link--pages" class="nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20" href="#" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu--pages">
-              Pages 
-            </a>
           </li>
+          <% if user_signed_in?%>
+            <li class="nav-item g-mx-10--lg g-mx-15--xl">
+              <%= link_to 'Signup', new_user_registration_path, id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20"%>
+            </li>
+            <li class="nav-item g-mx-10--lg g-mx-15--xl">
+              <%=link_to "Password recovery", edit_user_password_path, id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20"%>
+            </li>
+            <li class="nav-item g-mx-10--lg g-mx-15--xl">
+              <%= link_to 'Your orders', root_path, id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20" %>
+            </li>
+            <li class="nav-item g-mx-10--lg g-mx-15--xl">
+              <%= link_to 'Checkout', destroy_user_session_path, method: :delete, id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20" %> 
+            </li>
+           <%else%>
+            <li class="nav-item g-mx-10--lg g-mx-15--xl">
+              <%= link_to 'Signup', new_user_registration_path, id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20" %>
+            </li>
+            <li class="nav-item g-mx-10--lg g-mx-15--xl">
+              <%= link_to 'Login', new_user_session_path, id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20" %> 
+            </li>
+        
+          <%end%>
           <!-- End Pages - Submenu -->
         </ul>
       </div>
