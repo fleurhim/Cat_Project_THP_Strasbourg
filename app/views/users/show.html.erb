@@ -7,7 +7,7 @@
           <div class="u-block-hover g-pos-rel">
             <figure>
               <%if @user.avatar.attached?%>
-                <%= image_tag @user.avatar, alt: 'avatar' %>
+                <%= image_tag @user.avatar, alt: 'avatar', class: "img-fluid w-100 u-block-hover__main--zoom-v1" %>
               <%else%>
                 <p>=== No avatar ===</p>
               <%end%>
