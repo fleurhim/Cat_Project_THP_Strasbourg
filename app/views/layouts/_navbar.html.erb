@@ -51,9 +51,18 @@
         <div class="col-sm-auto g-pos-rel g-py-14">
           <!-- List -->
           <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
+            <% if user_signed_in?%>
             <li class="list-inline-item g-mx-4">
-              <a class="g-color-white-opacity-0_6 g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" href="page-help-1.html">Help</a>
+              <%= link_to 'Checkout', destroy_user_session_path, method: :delete, class:"btn btn-outline-primary rounded-sm g-color-secondary-opacity-0.6--hover g-font-weight-400 g-text-underline--none--hover" %> 
             </li>
+           <%else%>
+            <li class="list-inline-item g-mx-4">
+              <%= link_to 'Signup', new_user_registration_path, class:"btn btn-outline-primary rounded-sm g-color-secondary-opacity-0.6--hover g-font-weight-400 g-text-underline--none--hover" %>
+            </li>
+            <li class="list-inline-item g-mx-4">
+              <%= link_to 'Login', new_user_session_path, class:"btn btn-primary rounded-sm g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" %> 
+            </li>
+          <%end%>
           </ul>
         </div>
               
@@ -106,27 +115,10 @@
           <li class="nav-item g-mx-10--lg g-mx-15--xl">
             <%=link_to "Home", root_path, id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20"%>
           </li>
-          <% if user_signed_in?%>
+          <%if user_signed_in?%>
             <li class="nav-item g-mx-10--lg g-mx-15--xl">
-              <%= link_to 'Signup', new_user_registration_path, id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20"%>
+                <%= link_to 'Your profil', user_path(current_user.id), id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20" %>
             </li>
-            <li class="nav-item g-mx-10--lg g-mx-15--xl">
-              <%=link_to "Password recovery", edit_user_password_path, id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20"%>
-            </li>
-            <li class="nav-item g-mx-10--lg g-mx-15--xl">
-              <%= link_to 'Your orders', root_path, id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20" %>
-            </li>
-            <li class="nav-item g-mx-10--lg g-mx-15--xl">
-              <%= link_to 'Checkout', destroy_user_session_path, method: :delete, id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20" %> 
-            </li>
-           <%else%>
-            <li class="nav-item g-mx-10--lg g-mx-15--xl">
-              <%= link_to 'Signup', new_user_registration_path, id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20" %>
-            </li>
-            <li class="nav-item g-mx-10--lg g-mx-15--xl">
-              <%= link_to 'Login', new_user_session_path, id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20" %> 
-            </li>
-        
           <%end%>
           <!-- End Pages - Submenu -->
         </ul>
