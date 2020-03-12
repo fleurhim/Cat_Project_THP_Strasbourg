@@ -5,6 +5,6 @@ class Order < ApplicationRecord
 
 def order_send
     OrderMailer.order_email(self).deliver_now
-  end
+end
 
 end
