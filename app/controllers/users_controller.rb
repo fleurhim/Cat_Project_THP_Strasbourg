@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@orders = Order.where(user_id: params[:id])
+		@items = Item.where(admin_id: params[:id])
 	end
 
 	private

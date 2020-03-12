@@ -36,7 +36,14 @@ class ItemsController < ApplicationController
 		flash[:error] = "Something went wrong, please try again"
 		render :edit
 		end 
-	 end
+	end
+
+	def destroy
+		@item=Item.find(params[:id])
+		@item.destroy
+		redirect_to request.referrer
+		flash[:success]= "You have successfully deleted this cat"
+	end 
 	 
 	private
 
