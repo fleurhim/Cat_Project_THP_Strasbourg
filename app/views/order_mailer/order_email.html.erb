@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+ 		<h1>Your Order is Completed!</h1>
+    <h2>Hello <%= User.find(@order.user_id).first_name %> <%= User.find(@order.user_id).last_name %> welcome to KittyCat!</h2>
+    <p> Thank you for your order! Your order is being processed and will be shipped within 3-6 days.</p>
+    <p> See you soon! </p>
+  </body>
+</html>
+
