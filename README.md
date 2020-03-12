@@ -13,7 +13,7 @@ PRODUCTION
 
 Suivez ce lien et découvrez un projet made in Strasbourg
 
-floating-mesa-04975.herokuapp.com/
+https://vast-harbor-54024.herokuapp.com/
 
 
 
