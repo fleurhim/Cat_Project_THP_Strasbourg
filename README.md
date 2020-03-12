@@ -1,24 +1,39 @@
-# README
+#Readme
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**KittyCat**
+========== 
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+*Ruby version*
+ruby '2.5.1'
 
-* Configuration
+PRODUCTION
+===========
 
-* Database creation
+Suivez ce lien et découvrez un projet made in Strasbourg
 
-* Database initialization
+floating-mesa-04975.herokuapp.com/
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+DEVELOPPEMENT
+============
 
-* ...
+**Installation** 
+
+    bundle install
+    rails db:create
+    rails db:migrate
+    rails db:seed
+    rails server
+
+
+
+EQUIPE
+=========
+
+1. FLeur Himmler 
+2. Jonas Audia
+3. Mathieu Farge
+4. Jade Caillot
