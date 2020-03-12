@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
 	end 
 
 	def create
-		@item=Item.new(title: params[:title], description: params[:description], price: params[:price], image_url: params[:image_url], admin: current_user)
+		@item=Item.new(title: params[:title], description: params[:description], price: params[:price], picture: params[:picture], admin: current_user)
 		if @item.save
 			redirect_to item_path(@item.id)
 			flash[:success] = "This kitty has been successfully added to the kitty database"
@@ -48,7 +48,7 @@ class ItemsController < ApplicationController
 	private
 
 	def item_params
-		item_params=params.require(:item).permit(:title, :description, :price, :image_url)
+		item_params=params.require(:item).permit(:title, :description, :price, :picture)
 	end
 
 end

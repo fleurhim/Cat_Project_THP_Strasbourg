@@ -24,7 +24,11 @@
                 
             <!-- Image -->
                <div class="col-lg-7 ml-lg-autoQ">
-                            <img class="img-fluid g-width-200 g-width-auto--lg g-mb-30 g-mb-0--lg mx-auto" src="<%=@item.image_url%>" alt="Kitten description">
+                            <%if @item.picture.attached?%>
+                                <%= image_tag @item.picture, alt: 'picture', class: "img-fluid g-width-200 g-width-auto--lg g-mb-30 g-mb-0--lg mx-auto" %>
+                            <%else%>
+                                <p>=== No picture ===</p>
+                            <%end%>
                         </div>
             <!-- End Image -->
             

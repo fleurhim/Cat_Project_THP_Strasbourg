@@ -16,11 +16,22 @@
               <i class="g-font-style-normal g-font-weight-700 g-hide-check">2</i>
               <i class="fa fa-check g-show-check"></i>
             </span>
-            <h4 class="g-font-size-16 text-uppercase mb-0 mt-2">Shipping</h4>
+            <h4 class="g-font-size-16 text-uppercase mb-0 mt-2">Payment</h4>
           </li>
         </ul>
       </div>
     </form>
+
+    <div class="g-py-15">
+      <div class="row">
+          <div class="col-8 mb-4">
+            <%= text_field_tag "address","" , class:"form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15", placeholder:"The Hacking Project, 67000 Strasbourg, France" %>
+          </div>
+          <div class="col-4">
+            <%= submit_tag 'Save address', class:'btn btn-md btn-block u-btn-primary g-rounded-50 g-py-13 mb-4' %>
+          </div>
+      </div>
+    </div>
 
     <div class="g-bg-black-light-v5 g-pa-20 g-pb-50 mb-4">
       <h4 class="h6 text-uppercase mb-3">Summary</h4>
@@ -41,12 +52,10 @@
           <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                   data-description="Your Order"
-                  data-amount=<%= @cart.amount_to_be_paid*100 %>€
-                 >
+                  data-amount=<%= @cart.amount_to_be_paid*100 %>
+                  >
           </script>
         <% end %>
     </div>
   </div>
 </div>
-
-
