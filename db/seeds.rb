@@ -17,6 +17,8 @@ require 'faker'
 Item.destroy_all
 User.destroy_all
 Cart.destroy_all
+JoinTableCartItem.destroy_all
+Order.destroy_all
 
 kitty_pictures = ["https://cdn.pixabay.com/photo/2020/01/29/21/57/cat-4803841_960_720.jpg",
     "https://cdn.pixabay.com/photo/2014/11/30/14/11/kitty-551554_960_720.jpg", 
@@ -27,42 +29,41 @@ kitty_pictures = ["https://cdn.pixabay.com/photo/2020/01/29/21/57/cat-4803841_96
 
 
 10.times do 
-    user = User.new(first_name: Faker::Name.first_name, 
-                    last_name: Faker::Name.last_name,
-                    address: Faker::Address.street_address,
-                    email: Faker::Internet.email,
-                    password: "123456")
-    user.save
+  User.create(
+		first_name: Faker::Name.first_name, 
+    last_name: Faker::Name.last_name,
+		address: Faker::Address.street_address,
+		email: Faker::Internet.email,
+		password: "123456")
 end 
 
 9.times do 
-    item = Item.new(title: Faker::Name.first_name, 
-                    description: Faker::Lorem.paragraph,
-                    price: Faker::Number.decimal(l_digits: 2),
-                    image_url: kitty_pictures.sample,
-                    admin_id: rand(User.first.id..User.last.id))
-    item.save
+  Item.create(
+		title: Faker::Name.first_name, 
+		description: Faker::Lorem.paragraph,
+		price: Faker::Number.decimal(l_digits: 2),
+		image_url: kitty_pictures.sample,
+		admin_id: rand(User.first.id..User.last.id))
 end 
 
 10.times do 
-    cart = Cart.create(customer_id: rand(User.first.id..User.last.id))
-    cart.save
+    Cart.create(
+			customer_id: rand(User.first.id..User.last.id))
 end
 
 10.times do 
-    content = JoinTableCartItem.new(cart_id: rand(Cart.first.id..Cart.last.id),
-                                    item_id: rand(Item.first.id..Item.last.id))
-    content.save
+  JoinTableCartItem.create(
+		cart_id: rand(Cart.first.id..Cart.last.id),
+		item_id: rand(Item.first.id..Item.last.id))
 end 
 
 10.times do
-    order = Order.create(
-        user_id: rand(User.first.id..User.last.id),
-        cart_id: rand(Cart.first.id..Cart.last.id),
-        delivery_address: Faker::Address.street_address, 
-        items_number: Faker::Number.number(digits: 1),
-        total_order: Faker::Number.decimal(l_digits: 2)
-        )
+	Order.create(
+		user_id: rand(User.first.id..User.last.id),
+		cart_id: rand(Cart.first.id..Cart.last.id),
+		delivery_address: Faker::Address.street_address, 
+		items_number: Faker::Number.number(digits: 1),
+		total_order: Faker::Number.decimal(l_digits: 2))
 end
 
 
