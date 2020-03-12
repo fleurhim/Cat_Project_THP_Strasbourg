@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :items
   devise_for :users
 
-  resources :carts, only: [:show] do 
+  resources :carts, only: [:show, :destroy] do 
     resources :join_table_cart_items, only: [:create, :destroy]
   end
   
