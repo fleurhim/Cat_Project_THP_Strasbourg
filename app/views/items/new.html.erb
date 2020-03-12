@@ -11,17 +11,17 @@
                 <%= form_tag url_for(action: 'create'), method: "post" do%>
 
                 <div class="mb-4">
-                    <%= label_tag 'title' %>
-                    <%= text_field_tag :title, @item.title, class:"form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15", placeholder:"Name of the kitty" %>
+                    <%= label_tag 'Name' %>
+                    <%= text_field_tag :title, @item.title, class:"form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15", placeholder:"KittyCat" %>
                 </div>
 
                 <div class="mb-4">
-                    <%= label_tag 'description' %>
+                    <%= label_tag 'Description' %>
                     <%= text_area_tag :description, @item.description, class:"form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15", placeholder:"description" %>
                 </div>
 
                 <div class="mb-4">
-                    <%= label_tag 'price' %>
+                    <%= label_tag 'Price' %>
                     <%= number_field_tag :price, @item.price, min: 1, class:"form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15", placeholder:"price" %>
                 </div>
 
