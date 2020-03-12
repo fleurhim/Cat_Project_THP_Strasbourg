@@ -91,11 +91,11 @@
                 
               <% if user_signed_in? %>
                 <%= link_to cart_join_table_cart_items_path(@cart.id, "item" => item.id), {"method" => "post"} , class:"g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" do %>
-                  <i class="icon-finance-100 u-line-icon-pro"></i>
+                  <i class="fas fa-shopping-bag fa-7"></i>
                 <% end %>
               <% else %>
                 <%= link_to new_user_session_path , class:"g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" do %>
-                  <i class="icon-finance-100 u-line-icon-pro"></i>
+                  <i class="fas fa-shopping-bag fa-7"></i>
                 <% end %>
               <% end %>
 
