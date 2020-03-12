@@ -31,11 +31,11 @@
               <span class="align-top"><%= @user.first_name%> <%=@user.last_name%></span>
             </div>
             <span>
-               <%= link_to "", edit_user_registration_path, class: "icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"%>
+               <%= link_to "", edit_user_registration_path, class: "fas fa-pencil-alt"%>
               </span>
           </li>
           <!-- End Name -->
-
+ 
           <!-- Primary Email Address -->
           <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
             <div class="g-pr-10">
@@ -43,7 +43,7 @@
               <span class="align-top"><%= @user.email%></span>
             </div>
             <span>
-              <%= link_to "", edit_user_registration_path, class: "icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"%>
+              <%= link_to "", edit_user_registration_path, class: "fas fa-pencil-alt"%>
               </span>
           </li>
           <!-- End Primary Email Address -->
@@ -55,7 +55,7 @@
               <span class="align-top"><%= @user.address%></span>
             </div>
             <span>
-              <%= link_to "", edit_user_registration_path, class: "icon-pencil g-color-gray-dark-v5 g-color-primary--hover g-cursor-pointer g-pos-rel g-top-1"%>
+              <%= link_to "", edit_user_registration_path, class: "fas fa-pencil-alt"%>
               </span>
           </li>
           <!-- End Address -->
@@ -83,7 +83,7 @@
         </tr>
       </thead>
       <tbody>
-        <% if @order.nil? %>
+        <% if @orders.nil? %>
         <p>  ⚠ Vous n'avez pas encore de commande ⚠ </p>
         <% else %>
           <% @orders.each do |order| %>
@@ -93,12 +93,12 @@
             </td>
             <td class="align-middle">
               <div class="d-flex">
-                <i class="icon-location-pin g-font-size-18 g-color-gray-dark-v5 g-pos-rel g-top-5 g-mr-7"></i>
+                <i class="fas fa-map-marker-alt"></i>
                 <span><%= order.delivery_address %></span>
               </div>
             </td>
             <td class="align-middle text-nowrap">
-              <h4 class="h6 g-mb-2"><%= order.created_at %></h4>
+              <h4 class="h6 g-mb-2"><%= order.created_at.strftime("%F") %> à <%= order.created_at.strftime("%Hh%M") %> </h4>
             </td>
             <td class="align-middle text-nowrap">
               <span class="d-block g-mb-5">
