@@ -11,9 +11,6 @@ class CartsController < ApplicationController
     end
 
     def destroy
-    	@cart = Cart.find_by(customer_id: current_user.id)
-    	@cart.destroy
-    	redirect_to cart_path(customer_id: current_user.id)
     end
 
     private

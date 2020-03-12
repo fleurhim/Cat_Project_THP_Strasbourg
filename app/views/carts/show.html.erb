@@ -93,7 +93,6 @@
                     <span class="g-color-black g-font-weight-800"><%= @cart.amount_to_be_paid %> €</span>
               </div><hr>
 
-            <%= link_to "Clear Shopping Cart", cart_path(current_user.id), method: :delete, data: {confirm: "Es-tu sûr(e)?"}, class: "btn btn-block u-btn-outline-black g-brd-gray-light-v1 g-bg-black--hover g-font-size-13 text-uppercase g-py-15 mb-4" %>
             <button class="btn btn-block u-btn-primary g-font-size-13 text-uppercase g-py-15 mb-4" type="button" data-next-step="#step2">Proceed to Payment</button>
             </div>
             <!-- End Summary -->
