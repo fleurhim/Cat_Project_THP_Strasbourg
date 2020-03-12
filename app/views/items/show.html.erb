@@ -131,6 +131,14 @@
                                 <%end%>
                             <% end %>
 
+                            <div class="d-flex justify-content-center">
+                                <%if @item.admin == current_user %>
+                                    <%= link_to edit_item_path(@item.id) do %>
+                                    <button class="btn btn-sm btn-secondary mt-2" >Edit <i class="fas fa-edit pl-2"></i>
+                                    </button>
+                                    <%end%>
+                                <%end%>
+                                </div>
                             </div>
                         </div>
                         <!-- End Buttons -->

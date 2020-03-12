@@ -47,38 +47,32 @@
           </ul>
           <!-- End List -->
         </div>
-
-        <div class="col-sm-auto g-pos-rel g-py-14">
-          <!-- List -->
-          <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
-            <% if user_signed_in?%>
-            <li class="list-inline-item g-mx-4">
-              <%= link_to 'Checkout', destroy_user_session_path, method: :delete, class:"btn btn-outline-primary rounded-sm g-color-secondary-opacity-0.6--hover g-font-weight-400 g-text-underline--none--hover" %> 
-            </li>
-           <%else%>
-            <li class="list-inline-item g-mx-4">
-              <%= link_to 'Signup', new_user_registration_path, class:"btn btn-outline-primary rounded-sm g-color-secondary-opacity-0.6--hover g-font-weight-400 g-text-underline--none--hover" %>
-            </li>
-            <li class="list-inline-item g-mx-4">
-              <%= link_to 'Login', new_user_session_path, class:"btn btn-primary rounded-sm g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" %> 
-            </li>
-          <%end%>
-          </ul>
-        </div>
               
-         <div class="col-sm-auto g-pr-15 g-pr-0--sm">
+         <div class="col-sm-auto g-pr-0--sm mb-0">
           <!-- Basket -->
           <div class="u-basket d-inline-block g-z-index-3">
             <div class="g-py-10 g-px-6">
+              <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0"></ul>
               <% if user_signed_in? %>
-                <%= link_to cart_path(cart.id), id:"basket-bar-invoker", class:"u-icon-v1 g-color-white-opacity-0_8 g-color-primary--hover g-font-size-17 g-text-underline--none--hover" do %>
+                <li class="list-inline-item g-mx-4">
+                  <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"btn btn-outline-primary rounded-sm g-color-secondary-opacity-0.6--hover g-font-weight-400 g-text-underline--none--hover pb-2" %> 
+                </li>
+                <%= link_to cart_path(cart.id), id:"basket-bar-invoker", class:"u-icon-v1 g-color-white-opacity-0_8 g-color-primary--hover g-font-size-17 g-text-underline--none--hover pb-3" do %>
+                <span class="u-badge-v1--sm g-color-white g-bg-primary g-font-size-11 g-line-height-1_4 g-rounded-50x g-pa-4" style="top: 7px !important; right: 3px !important;"><%=@cart.items.count%></span>
                   <i class="fas fa-shopping-bag fa-7"></i>
                 <% end %>
               <% else %>
-                <%= link_to new_user_session_path, id:"basket-bar-invoker", class:"u-icon-v1 g-color-white-opacity-0_8 g-color-primary--hover g-font-size-17 g-text-underline--none--hover" do %>
+                <li class="list-inline-item g-mx-4">
+                  <%= link_to 'Signup', new_user_registration_path, class:"btn btn-outline-primary rounded-sm g-color-secondary-opacity-0.6--hover g-font-weight-400 g-text-underline--none--hover" %>
+                </li>
+                <li class="list-inline-item g-mx-4">
+                  <%= link_to 'Login', new_user_session_path, class:"btn btn-primary rounded-sm g-color-primary--hover g-font-weight-400 g-text-underline--none--hover" %> 
+                </li>
+                <%= link_to new_user_session_path, id:"basket-bar-invoker", class:"u-icon-v1 g-color-white-opacity-0_8 g-color-primary--hover g-font-size-17 g-text-underline--none--hover pb-3" do %>
                   <i class="fas fa-shopping-bag fa-7"></i>
                 <% end %>
               <% end %>
+              </ul>
             </div>
             </div></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; display: block; height: 91px; max-height: 166px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div>
             </div>
@@ -119,6 +113,9 @@
             <li class="nav-item g-mx-10--lg g-mx-15--xl">
                 <%= link_to 'Your profil', user_path(current_user.id), id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20" %>
             </li>
+            <li class="nav-item g-mx-10--lg g-mx-15--xl">
+              <%= link_to 'Add a kitty', new_item_path, id:"nav-link--pages", class:"nav-link g-color-primary text-uppercase g-color-primary--hover g-px-5 g-py-20" %>
+          </li>
           <%end%>
           <!-- End Pages - Submenu -->
         </ul>
