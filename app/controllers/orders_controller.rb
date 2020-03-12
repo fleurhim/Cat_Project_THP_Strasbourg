@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
 	    customer: customer.id,
 	    amount: @amount.to_i,
 	    description: 'Rails Stripe customer',
-	    currency: 'usd',
+	    currency: 'eur',
 		})
     @order = Order.new(
 			user_id: @cart.customer_id,
@@ -28,7 +28,7 @@ class OrdersController < ApplicationController
 		)
 		if @order.save
 			@cart.destroy
-			redirect_to user_path(current_user.id)
+			#redirect_to user_path(current_user.id)
 		else
 		 render :back
 		end
