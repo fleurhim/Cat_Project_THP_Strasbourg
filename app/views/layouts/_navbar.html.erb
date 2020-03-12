@@ -113,6 +113,9 @@
             <li class="nav-item g-mx-10--lg g-mx-15--xl">
                 <%= link_to 'Your profil', user_path(current_user.id), id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20" %>
             </li>
+            <li class="nav-item g-mx-10--lg g-mx-15--xl">
+              <%= link_to 'Add a kitty', new_item_path, id:"nav-link--pages", class:"nav-link g-color-primary text-uppercase g-color-primary--hover g-px-5 g-py-20" %>
+          </li>
           <%end%>
           <!-- End Pages - Submenu -->
         </ul>
