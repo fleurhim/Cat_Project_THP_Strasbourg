@@ -55,7 +55,7 @@
               <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0"></ul>
               <% if user_signed_in? %>
                 <li class="list-inline-item g-mx-4">
-                  <%= link_to 'Checkout', destroy_user_session_path, method: :delete, class:"btn btn-outline-primary rounded-sm g-color-secondary-opacity-0.6--hover g-font-weight-400 g-text-underline--none--hover pb-2" %> 
+                  <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"btn btn-outline-primary rounded-sm g-color-secondary-opacity-0.6--hover g-font-weight-400 g-text-underline--none--hover pb-2" %> 
                 </li>
                 <%= link_to cart_path(cart.id), id:"basket-bar-invoker", class:"u-icon-v1 g-color-white-opacity-0_8 g-color-primary--hover g-font-size-17 g-text-underline--none--hover pb-3" do %>
                 <span class="u-badge-v1--sm g-color-white g-bg-primary g-font-size-11 g-line-height-1_4 g-rounded-50x g-pa-4" style="top: 7px !important; right: 3px !important;"><%=@cart.items.count%></span>
@@ -113,6 +113,9 @@
             <li class="nav-item g-mx-10--lg g-mx-15--xl">
                 <%= link_to 'Your profil', user_path(current_user.id), id:"nav-link--pages", class:"nav-link text-uppercase g-color-primary--hover g-px-5 g-py-20" %>
             </li>
+            <li class="nav-item g-mx-10--lg g-mx-15--xl">
+              <%= link_to 'Add a kitty', new_item_path, id:"nav-link--pages", class:"nav-link g-color-primary text-uppercase g-color-primary--hover g-px-5 g-py-20" %>
+          </li>
           <%end%>
           <!-- End Pages - Submenu -->
         </ul>

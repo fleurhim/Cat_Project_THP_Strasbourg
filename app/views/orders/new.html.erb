@@ -1,15 +1,52 @@
-<%= form_tag user_orders_path(current_user.id) do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
+<div class="container g-pb-100">
+  <div class="text-center mx-auto g-max-width-600 g-mb-50">
+    <form class="js-validate js-step-form" data-progress-id="#stepFormProgress" data-steps-id="#stepFormSteps">
+      <div class="g-mb-100">
+        <!-- Step Titles -->
+        <ul id="stepFormProgress" class="js-step-progress row justify-content-center list-inline text-center g-font-size-17 mb-0">
+          <li class="col-3 list-inline-item g-mb-20 g-mb-0--sm">
+            <span class=" g-brd-primary g-color-primary g-color-white--parent-active g-bg-primary--active g-color-white--checked g-bg-primary--checked mx-auto mb-3">
+              <i class="fas fa-check-circle fa-2x"></i>
+            </span>
+            <h4 class="g-font-size-16 text-uppercase mb-0 mt-2">Shopping Cart</h4>
+          </li>
+
+          <li class="col-3 list-inline-item g-mb-20 g-mb-0--sm">
+            <span class="d-block u-icon-v2 u-icon-size--sm g-rounded-50x g-brd-primary g-color-primary g-color-white--parent-active g-bg-primary--active g-color-white--checked g-bg-primary--checked mx-auto mb-3">
+              <i class="g-font-style-normal g-font-weight-700 g-hide-check">2</i>
+              <i class="fa fa-check g-show-check"></i>
+            </span>
+            <h4 class="g-font-size-16 text-uppercase mb-0 mt-2">Shipping</h4>
+          </li>
+        </ul>
       </div>
-    <% end %>
-  </article>
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"
-          data-locale="auto">
-  </script>
-<% end %>
+    </form>
+
+    <div class="g-bg-black-light-v5 g-pa-20 g-pb-50 mb-4">
+      <h4 class="h6 text-uppercase mb-3">Summary</h4>
+
+        <hr>
+        <div class="d-flex justify-content-between">
+              <span class="g-color-black">Order Total</span>
+              <span class="g-color-black g-font-weight-800"><%= @cart.amount_to_be_paid %></span>
+        </div><hr>
+        <%= form_tag user_orders_path(current_user.id) do %>
+          <article>
+            <% if flash[:error].present? %>
+              <div id="error_explanation">
+                <p><%= flash[:error] %></p>
+              </div>
+            <% end %>
+          </article>
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="Your Order"
+                  data-amount=<%= @cart.amount_to_be_paid*100 %>€
+                 >
+          </script>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+
