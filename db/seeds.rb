@@ -17,6 +17,8 @@ require 'faker'
 Item.destroy_all
 User.destroy_all
 Cart.destroy_all
+JoinTableCartItem.destroy_all
+Order.destroy_all
 
 kitty_pictures = ["https://cdn.pixabay.com/photo/2020/01/29/21/57/cat-4803841_960_720.jpg",
     "https://cdn.pixabay.com/photo/2014/11/30/14/11/kitty-551554_960_720.jpg", 
