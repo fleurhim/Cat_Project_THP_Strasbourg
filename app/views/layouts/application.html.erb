@@ -12,6 +12,10 @@
   </head>
 
   <body>
+    <%if flash.any?%>
+        <p class="alert alert-secondary "><%= flash[:success] || flash[:error] %></p>
+    <%end%>
+
     <%= render "layouts/navbar" , cart: @cart %>
     <%= yield %>
     <%=render "layouts/footer"%>
