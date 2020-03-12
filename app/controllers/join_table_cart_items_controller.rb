@@ -17,5 +17,6 @@ class JoinTableCartItemsController < ApplicationController
     @item_to_destroy = JoinTableCartItem.find_by(cart_id: params[:cart_id], item_id: params[:id])
     @item_to_destroy.destroy
     flash[:success] = 'This item has been deleted from your cart'
+    redirect_to cart_path
   end
 end
