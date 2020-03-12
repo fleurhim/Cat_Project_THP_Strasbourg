@@ -53,7 +53,7 @@
           <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
             <% if user_signed_in?%>
             <li class="list-inline-item g-mx-4">
-              <%= link_to 'Checkout', destroy_user_session_path, method: :delete, class:"btn btn-outline-primary rounded-sm g-color-secondary-opacity-0.6--hover g-font-weight-400 g-text-underline--none--hover" %> 
+              <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"btn btn-outline-primary rounded-sm g-color-secondary-opacity-0.6--hover g-font-weight-400 g-text-underline--none--hover" %> 
             </li>
            <%else%>
             <li class="list-inline-item g-mx-4">
