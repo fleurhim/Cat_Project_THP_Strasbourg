@@ -73,4 +73,7 @@ gem 'devise'
 
 #Jquery
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+#Dotenv
 gem 'dotenv-rails'
+#Stripe
+gem 'stripe'
