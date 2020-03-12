@@ -16,5 +16,6 @@ class JoinTableCartItemsController < ApplicationController
   def destroy
     @item_to_destroy = JoinTableCartItem.find_by(cart_id: params[:cart_id], item_id: params[:id])
     @item_to_destroy.destroy
+    redirect_to cart_path
   end
 end
