@@ -8,7 +8,7 @@
         </ul>
     </div>
     </td>
-    <td class="g-color-gray-dark-v2 g-font-size-13"><%=item.price%></td>
+    <td class="g-color-gray-dark-v2 g-font-size-13"><%=item.price%> €</td>
     <td>
     <div class="js-quantity input-group u-quantity-v1 g-width-80 g-brd-primary--focus">
         <input class="js-result form-control text-center g-font-size-13 rounded-0 g-pa-0" type="text" value="1" readonly="">
@@ -20,9 +20,11 @@
     </div>
     </td>
     <td class="text-right g-color-black">
-    <span class="g-color-gray-dark-v2 g-font-size-13 mr-4"><%=item.price%></span>
+    <span class="g-color-gray-dark-v2 g-font-size-13 mr-4"><%=item.price%> €</span>
     <span class="g-color-gray-dark-v4 g-color-black--hover g-cursor-pointer">
-        <i class="mt-auto fa fa-trash"></i>
+         <%= link_to cart_join_table_cart_item_path(@cart.id, item.id), {"method" => "delete"} , class:"g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" do %> 
+         <i class="mt-auto fa fa-trash"></i>
+         <% end %>
     </span>
     </td>
 </tr>

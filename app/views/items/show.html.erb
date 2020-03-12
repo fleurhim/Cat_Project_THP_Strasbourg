@@ -113,18 +113,24 @@
                             </div>
                         </div>
                         <!-- End Quantity -->
-
                         <!-- Buttons -->
                         <div class="row g-mx-minus-5 g-mb-20">
                             <div class="col g-px-5 g-mb-10">
-                                <button class="btn btn-block u-btn-primary g-font-size-12 text-uppercase g-py-15 g-px-25" type="button">
-                    Add to Cart <i class="align-middle ml-2 icon-finance-100 u-line-icon-pro"></i>
-                  </button>
-                            </div>
-                            <div class="col g-px-5 g-mb-10">
-                                <button class="btn btn-block u-btn-outline-black g-brd-gray-dark-v5 g-brd-black--hover g-color-gray-dark-v4 g-color-white--hover g-font-size-12 text-uppercase g-py-15 g-px-25" type="button">
-                    Add to Wishlist <i class="align-middle ml-2 icon-medical-022 u-line-icon-pro"></i>
-                  </button>
+
+                            <% if user_signed_in? %>
+                                <%= link_to cart_join_table_cart_items_path(@cart.id, "item" => @item.id), {"method" => "post"} do %>
+                                <button class="btn btn-block btn-primary g-font-size-12 text-uppercase g-py-15 g-px-25" >
+                                Add to Cart <i class="align-middle ml-2 fas fa-shopping-bag fa-5"></i>
+                                </button>
+                                <%end%>
+                            <%else%>
+                                <%= link_to new_user_session_path, class:"btn btn-block btn-primary g-font-size-12 text-uppercase g-py-15 g-px-25" do %>
+                                    <button class="btn btn-block btn-primary g-font-size-12 text-uppercase g-py-15 g-px-25" >
+                                    Add to cart<i class="fas fa-shopping-bag fa-7"></i>
+                                    </button>
+                                <%end%>
+                            <% end %>
+
                             </div>
                         </div>
                         <!-- End Buttons -->
@@ -303,12 +309,12 @@
                                     <ul class="list-inline my-0">
                                         <li class="list-inline-item g-mr-20">
                                             <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#">
-                                                <i class="icon-medical-022 u-line-icon-pro g-pos-rel g-top-1 g-mr-3"></i> 5
+                                                <i class="far fa-heart g-pos-rel g-top-1 g-mr-3"></i> 5
                                             </a>
                                         </li>
                                         <li class="list-inline-item g-mr-20">
                                             <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#">
-                                                <i class="icon-finance-206 u-line-icon-pro g-pos-rel g-top-1 g-mr-3"></i> 1
+                                                <i class="far fa-comments g-pos-rel g-top-1 g-mr-3"></i> 1 
                                             </a>
                                         </li>
                                     </ul>
