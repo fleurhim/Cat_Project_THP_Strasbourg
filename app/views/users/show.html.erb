@@ -1,120 +1,157 @@
-<section class="g-mb-100">
-<div class="container">
-<div class="row">
+    <section class="g-mb-100">
+    <div class="container">
+    <div class="row">
 
-<div class="col-lg-3 g-mb-50 g-mb-0--lg">
-<!-- User Image -->
-  <div class="u-block-hover g-pos-rel">
-    <figure>
-      <%if @user.avatar.attached?%>
-        <%= image_tag @user.avatar, alt: 'avatar' %>
-      <%else%>
-        <p>=== No avatar ===</p>
-      <%end%>
-    </figure>
-  </div>
-  <!-- User Image -->
-</div>
-
-  <div class="col-lg-9">
-    <div class="card-block g-pa-0">
-      <!-- Edit Profile -->
-      <div class="tab-pane fade show active" id="nav-1-1-default-hor-left-underline--1" role="tabpanel" data-parent="#nav-1-1-default-hor-left-underline">
-        <h2 class="h4 g-font-weight-300">Manage your Name, ID and Email Addresses</h2>
-        <p>Below are name, email addresse, contacts and more on file for your account.</p>
-
-        <ul class="list-unstyled g-mb-30">
-          <!-- Name -->
-          <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
-            <div class="g-pr-10">
-              <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Name</strong>
-              <span class="align-top"><%= @user.first_name%> <%=@user.last_name%></span>
-            </div>
-            <span>
-               <%= link_to "", edit_user_registration_path, class: "fas fa-pencil-alt"%>
-              </span>
-          </li>
-          <!-- End Name -->
- 
-          <!-- Primary Email Address -->
-          <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
-            <div class="g-pr-10">
-              <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Primary email address</strong>
-              <span class="align-top"><%= @user.email%></span>
-            </div>
-            <span>
-              <%= link_to "", edit_user_registration_path, class: "fas fa-pencil-alt"%>
-              </span>
-          </li>
-          <!-- End Primary Email Address -->
-
-          <!-- Address -->
-          <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
-            <div class="g-pr-10">
-              <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Address</strong>
-              <span class="align-top"><%= @user.address%></span>
-            </div>
-            <span>
-              <%= link_to "", edit_user_registration_path, class: "fas fa-pencil-alt"%>
-              </span>
-          </li>
-          <!-- End Address -->
-        </ul>
-
-        <div class="text-sm-right">
-          <%= link_to "Back", :back, class: "btn u-btn-darkgray rounded-0 g-py-12 g-px-25 g-mr-10"%>
-          <%= link_to "Edit Profil", edit_user_registration_path, class: "btn u-btn-primary rounded-0 g-py-12 g-px-25"%>
+        <div class="col-lg-3 g-mb-50 g-mb-0--lg">
+        <!-- User Image -->
+          <div class="u-block-hover g-pos-rel">
+            <figure>
+              <%if @user.avatar.attached?%>
+                <%= image_tag @user.avatar, alt: 'avatar' %>
+              <%else%>
+                <p>=== No avatar ===</p>
+              <%end%>
+            </figure>
+          </div>
+          <!-- User Image -->
         </div>
-      </div>
-      <!-- End Edit Profile -->
-    </div><br><br><br><br>
 
-<h2 class="h4 g-font-weight-300">History of Orders</h2>
-<p>Below are your past orders.</p>
-  <!-- Product Table -->
-  <div class="table-responsive">
-    <table class="table table-bordered u-table--v2">
-      <thead class="text-uppercase g-letter-spacing-1">
-        <tr>
-          <th class="g-font-weight-300 g-color-black">Order ID</th>
-          <th class="g-font-weight-300 g-color-black g-min-width-200">Delivery Address</th>
-          <th class="g-font-weight-300 g-color-black">Date of Order</th>
-          <th class="g-font-weight-300 g-color-black">Contacts</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% if @orders.nil? %>
-        <p>  ⚠ Vous n'avez pas encore de commande ⚠ </p>
-        <% else %>
-          <% @orders.each do |order| %>
-          <tr>
-            <td class="align-middle text-nowrap">
-              <h4 class="h6 g-mb-2"><%= order.id %></h4>
-            </td>
-            <td class="align-middle">
-              <div class="d-flex">
-                <span><%= order.delivery_address %></span>
+          <div class="col-lg-9">
+            <div class="card-block g-pa-0">
+              <!-- Edit Profile -->
+              <div class="tab-pane fade show active" id="nav-1-1-default-hor-left-underline--1" role="tabpanel" data-parent="#nav-1-1-default-hor-left-underline">
+                <h2 class="h4 g-font-weight-300">Manage your Name, ID and Email Addresses</h2>
+                <p>Below are name, email addresse, contacts and more on file for your account.</p>
+
+                <ul class="list-unstyled g-mb-30">
+                  <!-- Name -->
+                  <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
+                    <div class="g-pr-10">
+                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Name</strong>
+                      <span class="align-top"><%= @user.first_name%> <%=@user.last_name%></span>
+                    </div>
+                    <span>
+                      <%= link_to "", edit_user_registration_path, class: "fas fa-pencil-alt"%>
+                      </span>
+                  </li>
+                  <!-- End Name -->
+        
+                  <!-- Primary Email Address -->
+                  <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
+                    <div class="g-pr-10">
+                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Primary email address</strong>
+                      <span class="align-top"><%= @user.email%></span>
+                    </div>
+                    <span>
+                      <%= link_to "", edit_user_registration_path, class: "fas fa-pencil-alt"%>
+                      </span>
+                  </li>
+                  <!-- End Primary Email Address -->
+
+                  <!-- Address -->
+                  <li class="d-flex align-items-center justify-content-between g-brd-bottom g-brd-gray-light-v4 g-py-15">
+                    <div class="g-pr-10">
+                      <strong class="d-block d-md-inline-block g-color-gray-dark-v2 g-width-200 g-pr-10">Address</strong>
+                      <span class="align-top"><%= @user.address%></span>
+                    </div>
+                    <span>
+                      <%= link_to "", edit_user_registration_path, class: "fas fa-pencil-alt"%>
+                      </span>
+                  </li>
+                  <!-- End Address -->
+                </ul>
+
+                <div class="text-sm-right">
+                  <%= link_to "Back", :back, class: "btn u-btn-darkgray rounded-0 g-py-12 g-px-25 g-mr-10"%>
+                  <%= link_to "Edit Profil", edit_user_registration_path, class: "btn u-btn-primary rounded-0 g-py-12 g-px-25"%>
+                </div>
               </div>
-            </td>
-            <td class="align-middle text-nowrap">
-              <h4 class="h6 g-mb-2"><%= order.created_at.strftime("%F") %> à <%= order.created_at.strftime("%Hh%M") %> </h4>
-            </td>
-            <td class="align-middle text-nowrap">
-              <span class="d-block g-mb-5">
-                <i class="fas fa-mobile-alt"></i> +1 4768 97655
-              </span>
-              <span class="d-block">
-                <i class="fas fa-envelope-open-text"></i> cute_kitten@kitten.com
-              </span>
-            </td>
-          </tr>
-          <% end %>
-        <% end %>
-      </tbody>
-    </table>
+              <!-- End Edit Profile -->
+            </div><br><br><br><br>
+
+        <h2 class="h4 g-font-weight-300">History of Orders</h2>
+        <p>Below are your past orders.</p>
+          <!-- Product Table -->
+          <div class="table-responsive">
+            <table class="table table-bordered u-table--v2">
+              <thead class="text-uppercase g-letter-spacing-1">
+                <tr>
+                  <th class="g-font-weight-300 g-color-black">Order ID</th>
+                  <th class="g-font-weight-300 g-color-black g-min-width-200">Delivery Address</th>
+                  <th class="g-font-weight-300 g-color-black">Date of Order</th>
+                  <th class="g-font-weight-300 g-color-black">Contacts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% if @orders.nil? %>
+                <p>  ⚠ Vous n'avez pas encore de commande ⚠ </p>
+                <% else %>
+                  <% @orders.each do |order| %>
+                  <tr>
+                    <td class="align-middle text-nowrap">
+                      <h4 class="h6 g-mb-2"><%= order.id %></h4>
+                    </td>
+                    <td class="align-middle">
+                      <div class="d-flex">
+                        <span><%= order.delivery_address %></span>
+                      </div>
+                    </td>
+                    <td class="align-middle text-nowrap">
+                      <h4 class="h6 g-mb-2"><%= order.created_at.strftime("%F") %> à <%= order.created_at.strftime("%Hh%M") %> </h4>
+                    </td>
+                    <td class="align-middle text-nowrap">
+                      <span class="d-block g-mb-5">
+                        <i class="fas fa-mobile-alt"></i> +1 4768 97655
+                      </span>
+                      <span class="d-block">
+                        <i class="fas fa-envelope-open-text"></i> cute_kitten@kitten.com
+                      </span>
+                    </td>
+                  </tr>
+                  <% end %>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+          <!-- End Product Table -->
+          <br><br><br><br>
+        <h2 class="h4 g-font-weight-300">Currently on the market</h2> <br>
+
+          <!-- Items Table -->
+          <% if @items.empty?%>
+          <div class="container d-flex justify-content-center"
+            <p>  ⚠ You do not have any cat on the market yet ⚠   </p>
+            <p class="ml-5"><%= link_to "Add a cat now", new_item_path, class: "btn btn-primary"%></p>
+        </div>
+
+          <% else %>
+
+            <div class="m-auto g-mb-30">
+              <!-- Products Block -->
+              <div class="g-overflow-x-scroll g-overflow-x-visible--lg">
+                <table class="text-center w-100">
+                  <thead class="h6 g-brd-bottom g-brd-gray-light-v3 g-color-black text-uppercase">
+                    <tr>
+                        <th class="g-font-weight-400 text-left g-pb-20">Product</th>
+                        <th class="g-font-weight-400 g-width-130 g-pb-20">Edit</th>
+                        <th class="g-font-weight-400 g-width-50 g-pb-20">Delete</th>
+                        <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Item-->
+                    <%@items.each do |item|%>
+                      <%= render 'show_items', item: item%>
+                    <%end%>
+                  </tbody>
+                </table>
+              </div>
+            <!-- End Products Block -->
+          </div>
+        <%end%>
+        </div> 
+
+      </div>
+    </div>
   </div>
-  <!-- End Product Table -->
-</div>
-</div>
-</div>
 </section>
