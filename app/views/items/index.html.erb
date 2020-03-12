@@ -61,7 +61,7 @@
 <section class="container g-py-100" id="all-items" >
   <div class="text-center mx-auto g-max-width-600 g-mb-50">
     <h2 class="g-color-black mb-4">New Arrivals</h2>
-    <p class="lead">We want to create a range of beautiful, practical and modern outerwear that doesn't cost the earth – but let's you still live life in style.</p>
+    <p class="lead">We want to offer you the cutest kitten photo ever. Once you will hang it in your living-room, it will brighten your day!</p>
   </div>
 
   <div class="row g-mx-minus-10 g-mb-50">
@@ -71,7 +71,7 @@
       <article class="media g-brd-around g-brd-gray-light-v4 g-bg-white rounded g-pa-10 g-mb-20">
         <!-- Article Image -->
         <div class="g-max-width-100 g-mr-15">
-          <img class="d-flex w-100" src="https://images.unsplash.com/photo-1520315342629-6ea920342047?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjg2ODQyfQ&auto=format&fit=crop&w=1400&q=800" alt="Image Description">
+          <img class="d-flex w-100" src="<%=item.image_url%>" alt="Image Description">
         </div>
         <!-- End Article Image -->
 
@@ -80,7 +80,7 @@
           <h4 class="h5 g-mb-7">
             <a class="g-color-black g-color-primary--hover g-text-underline--none--hover" href="#"><%= link_to item.title, item_path(item.id)%></a>
           </h4>
-          <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10" href="#">Accessories</a>
+          <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10" href="#">Kitten photo</a>
           <!-- End Article Info -->
 
           <!-- Article Footer -->

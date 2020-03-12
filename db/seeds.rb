@@ -18,7 +18,12 @@ Item.destroy_all
 User.destroy_all
 Cart.destroy_all
 
-kitty_pictures = ["https://pixabay.com/fr/photos/kitty-cat-chaton-551554/","https://pixabay.com/fr/photos/chatons-animaux-de-compagnie-dormir-1916542/", "https://pixabay.com/fr/photos/cat-chaton-animal-de-compagnie-4803841/", "https://pixabay.com/fr/photos/chaton-cat-petit-chat-kitty-mignon-2288404/", "https://pixabay.com/fr/photos/chats-animaux-yeux-4889299/"]
+kitty_pictures = ["https://cdn.pixabay.com/photo/2020/01/29/21/57/cat-4803841_960_720.jpg",
+    "https://cdn.pixabay.com/photo/2014/11/30/14/11/kitty-551554_960_720.jpg", 
+    "https://cdn.pixabay.com/photo/2016/03/28/10/05/kitten-1285341_960_720.jpg", 
+    "https://cdn.pixabay.com/photo/2019/11/08/11/56/cat-4611189_960_720.jpg", 
+    "https://cdn.pixabay.com/photo/2016/11/29/01/10/adorable-1866475_960_720.jpg",
+    "https://cdn.pixabay.com/photo/2018/05/30/19/29/cat-3442257_960_720.jpg"]
 
 
 10.times do 

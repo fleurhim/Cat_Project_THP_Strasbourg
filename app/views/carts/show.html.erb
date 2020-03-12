@@ -76,27 +76,26 @@
         </div>
 
         <div class="col-md-4 g-mb-30">
-            <!-- Summary -->
-            <div class="g-bg-gray-light-v5 g-pa-20 g-pb-50 mb-4">
-              <h4 class="h6 text-uppercase mb-3">Summary</h4>
-              <div class="row">
-                <% @items.each do |item| %>
+        <!-- Summary -->
+          <div class="g-bg-gray-light-v5 g-pa-20 g-pb-50 mb-4">
+            <h4 class="h6 text-uppercase mb-3">Summary</h4>
+            <div class="row">
+              <% @items.each do |item| %>
                 <div class="col-md-12 d-flex justify-content-between">
                   <span class="g-color-black"><%=item.title%></span>
                   <span class="g-color-black g-font-weight-300"><%=item.price%> €</span>
                 </div>
-                <%end%>
+              <%end%>
               </div>
               <hr>
               <div class="d-flex justify-content-between">
                     <span class="g-color-black">Order Total</span>
                     <span class="g-color-black g-font-weight-800"><%= @cart.amount_to_be_paid %> €</span>
               </div><hr>
-
-            <button class="btn btn-block u-btn-primary g-font-size-13 text-uppercase g-py-15 mb-4" type="button" data-next-step="#step2">Proceed to Payment</button>
-            </div>
-            <!-- End Summary -->
+              <%= link_to "Proceed to payment" , new_user_order_path(current_user.id), class:"btn btn-block u-btn-primary g-font-size-13 text-uppercase g-py-15 mb-4" %>
+          </div>
         </div>
+        <!-- End Summary -->
       </div>
     <!-- End Shopping Cart -->
     </div>
