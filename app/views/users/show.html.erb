@@ -118,7 +118,14 @@
         <h2 class="h4 g-font-weight-300">Currently on the market</h2> <br>
 
           <!-- Items Table -->
-          
+          <% if @items.empty?%>
+          <div class="container d-flex justify-content-center"
+            <p>  ⚠ You do not have any cat on the market yet ⚠   </p>
+            <p class="ml-5"><%= link_to "Add a cat now", new_item_path, class: "btn btn-primary"%></p>
+        </div>
+
+          <% else %>
+
             <div class="m-auto g-mb-30">
               <!-- Products Block -->
               <div class="g-overflow-x-scroll g-overflow-x-visible--lg">
@@ -141,7 +148,7 @@
               </div>
             <!-- End Products Block -->
           </div>
-            
+        <%end%>
         </div> 
 
       </div>
