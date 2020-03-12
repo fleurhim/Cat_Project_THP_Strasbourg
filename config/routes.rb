@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   
   resources :users, only: [:show, :index] do
-    resources :orders, only: [:index]
+    resources :orders, only: [:new, :create]
     resources :avatars, only: [:create]
   end
 

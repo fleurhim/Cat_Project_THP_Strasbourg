@@ -4,7 +4,6 @@ class CartsController < ApplicationController
       @items=@cart.items
     end
 
-
     def create
     end
 end
