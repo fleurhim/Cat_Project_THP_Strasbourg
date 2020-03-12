@@ -24,7 +24,7 @@
                 
             <!-- Image -->
                <div class="col-lg-7 ml-lg-autoQ">
-                            <img class="img-fluid g-width-200 g-width-auto--lg g-mb-30 g-mb-0--lg mx-auto" src="https://cdn.mos.cms.futurecdn.net/vChK6pTy3vN3KbYZ7UU7k3-650-80.jpg" alt="Kitten description">
+                            <img class="img-fluid g-width-200 g-width-auto--lg g-mb-30 g-mb-0--lg mx-auto" src="<%=@item.image_url%>" alt="Kitten description">
                         </div>
             <!-- End Image -->
             
@@ -56,7 +56,7 @@
                             <div id="accordion-01-body-01" class="collapse" role="tabpanel" aria-labelledby="accordion-01-heading-01">
                                 <div class="g-py-10">
                                     <p class="g-font-size-12 mb-2"><%= @item.description%></p>
-                                    <p class="g-font-size-12 mb-2">Raised by <%= @item.admin_id%></p>
+                                    <p class="g-font-size-12 mb-2">Photo by <%= @item.admin_id%></p>
                                 </div>
                             </div>
                         </div>
