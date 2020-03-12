@@ -8,8 +8,8 @@
 
             <!-- Form -->
             <div class="g-py-15">
-                <%= form_for @item do |f|%>
-
+                <%= form_for @item do |f| %>
+ 
                 <div class="mb-4">
                     <%= label_tag 'Name' %>
                     <%= f.text_field :title, class:"form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" %>
@@ -26,10 +26,7 @@
                 </div>
 
                 <div class="mb-4 d-flex justify-content-center">
-                    <%= f.file_field :image_url %>
-                </div>
-                <div class="mb-4 d-flex justify-content-center">
-                    <%= f.submit "Modify picture", class: "btn u-btn-primary g-rounded-50 g-mr-10 g-mb-15" %>
+                    <%= f.file_field :picture %>
                 </div>
         
                 <hr>

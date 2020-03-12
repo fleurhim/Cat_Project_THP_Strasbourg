@@ -71,7 +71,11 @@
       <article class="media g-brd-around g-brd-gray-light-v4 g-bg-white rounded g-pa-10 g-mb-20">
         <!-- Article Image -->
         <div class="g-max-width-100 g-mr-15">
-          <img class="d-flex w-100" src="<%=item.image_url%>" alt="Image Description">
+          <%if item.picture.attached?%>
+            <%= image_tag item.picture, alt: 'picture', class: "d-flex w-100" %>
+          <%else%>
+            <img class="d-flex w-100" src="<%=item.image_url%>" alt="Image Description">
+          <%end%>
         </div>
         <!-- End Article Image -->
 
